@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F852C415-2521-4BB4-BC10-9E6877D7F221}</ProjectGuid>
+    <ProjectGuid>{37B0257B-B2F4-4F38-B86B-8A13A18E301E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Project01_5093_0225_dotNet5780</RootNamespace>
-    <AssemblyName>Project01_5093_0225_dotNet5780</AssemblyName>
+    <RootNamespace>IDAL</RootNamespace>
+    <AssemblyName>IDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="main.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

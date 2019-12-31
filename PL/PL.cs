@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project01_5093_0225_dotNet5780
+namespace PL
 {
-    class Program
+    class PL
     {
         static void Main(string[] args)
         {
