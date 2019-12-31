@@ -20,8 +20,8 @@ namespace BE
                 order = value;
             }
         }
-        public static long HostingUnitKey;
-        public static long GuestRequestKey;
+        public long HostingUnitKey;
+        public long GuestRequestKey;
         public My_enum.Status Status;
         public DateTime CreateDate; //תאריך יציאת ההזמנה 
         public DateTime OrderDate; //תאריך משלוח המייל ללקוח

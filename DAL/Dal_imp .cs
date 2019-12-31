@@ -17,7 +17,7 @@ namespace DAL
         {
 
         }
-        public void addGuestRequest(GuestRequest My_GuestRequest) //הוספת דרישת לקוח
+        public void AddGuestRequest(GuestRequest My_GuestRequest) //הוספת דרישת לקוח
         {
             bool ezer = false;
             foreach (var item in DataSource.My_GuestRequestsList)

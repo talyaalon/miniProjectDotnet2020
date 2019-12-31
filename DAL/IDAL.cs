@@ -9,7 +9,7 @@ namespace DAL
 {
     public interface IDAL
     {
-        void addGuestRequest(GuestRequest My_GuestRequest);//הוספת דרישת לקוח
+        void AddGuestRequest(GuestRequest My_GuestRequest);//הוספת דרישת לקוח
         void Requirement_update(GuestRequest My_GuestRequest); //עידכון דרישת לקוח
 
         void addHostingUnit(HostingUnit My_HostingUnit); //הוספת יחידת אירוח
@@ -24,6 +24,7 @@ namespace DAL
         List<GuestRequest> My_GuestRequestList();
         List<Order> My_OrdersList();
         List<BankBranch> My_BankBranchList();
+        
     }
 }
 

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class Factory_BL
+     class Factory_BL
     {
         static IBL bl = null;
         public static IBL getBL()
         {
             if (bl == null)
-                bl = new imp_IBL();
+                bl = new IBL_imp();
             return bl;
         }
     }

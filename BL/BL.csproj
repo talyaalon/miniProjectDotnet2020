@@ -44,6 +44,7 @@
     <Compile Include="BL.cs" />
     <Compile Include="Factory_BL.cs" />
     <Compile Include="IBL.cs" />
+    <Compile Include="IBL_imp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +55,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{03592b79-c26f-4f9a-ba8c-73b50abc9ff4}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS\DS.csproj">
+      <Project>{9ACB0291-6F15-4E38-918B-4F3D05363AF1}</Project>
+      <Name>DS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
