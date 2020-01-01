@@ -39,7 +39,7 @@ namespace BE
                 HostingUnitName = value;
             }
         }
-        bool[,] Diary = new bool[12, 31];  //מטריצה 
+        public bool[,] Diary = new bool[12, 31];  //מטריצה 
 
         public string ezerToString()
         {

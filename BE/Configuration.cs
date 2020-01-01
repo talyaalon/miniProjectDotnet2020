@@ -20,7 +20,7 @@ namespace BE
         //Order:
         public static long OrderKey = 10000000;
         public static long Several_days_to_expire_order = 0;//expire
-        public static double sum_of_fees = 5;  //fees
+        public static double sum_of_fees = 10;  //fees (עמלה 10 שח ליום)
 
     
 
