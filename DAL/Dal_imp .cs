@@ -56,7 +56,7 @@ namespace DAL
             }
         }
 
-        void IDAL.addHostingUnit(HostingUnit My_HostingUnit) //הוספת יחידת אירוח
+        /*void IDAL.addHostingUnit(HostingUnit My_HostingUnit) //הוספת יחידת אירוח
         {
             bool ezer = false;
             foreach (var item in DataSource.My_HostingUnitList)
@@ -75,9 +75,28 @@ namespace DAL
             {
                 throw new NotImplementedException("The unit is already on the list");
             }
+        }*/
+        public void addHostingUnit(HostingUnit My_HostingUnit, List<HostingUnit> My_HostUnitList)
+        {
+            var L = from item in My_HostUnitList
+                    where (My_HostingUnit.n_hosting_unit == item.n_hosting_unit)
+                    select item;
+            if (L == null)
+            {
+                My_HostUnitList.Add(My_HostingUnit);
+                Configuration.HostingUnitKey++;
+            }
+            else
+            {
+                throw new NotImplementedException("היחידה נמצאת כבר ברשימה");
+
+            }
+
         }
 
-        public void deleteHostingUnit(HostingUnit My_HostingUnit)
+
+
+        /*public void deleteHostingUnit(HostingUnit My_HostingUnit)
         {
             bool ezer = false;
             foreach (var item in DataSource.My_HostingUnitList)
@@ -93,8 +112,27 @@ namespace DAL
             {
                 throw new NotImplementedException("not found");
             }
+        }*/
+        public void deleteHostingUnit(HostingUnit My_HostingUnit, List<HostingUnit> My_HostUnitList)
+        {
+            var L = from item in My_HostUnitList
+                    where (My_HostingUnit.n_hosting_unit == item.n_hosting_unit)
+                    select item;
+            if (L == null)
+            {
+                throw new NotImplementedException("not found");
+            }
+            else
+            {
+                My_HostUnitList.Remove(My_HostingUnit);
+                Configuration.HostingUnitKey--;
+            }
         }
         public void UpdateHostingUnit(HostingUnit My_HostingUnit)
+        {
+
+
+            public void UpdateHostingUnit(HostingUnit My_HostingUnit)
         {
             foreach (var item in DataSource.My_HostingUnitList)
             {

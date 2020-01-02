@@ -29,7 +29,7 @@ namespace DS
                         BranchCity = "מעלה אדומים",
                         BankAccountNumber= "480686",
                     },
-                    CollectionClearance= My_enum.Yes_Or_No.No
+                    CollectionClearance= My_enum.Yes_Or_No.לא
                 },
                 HostingUnitName = "הצימר של אפרת"
             }
@@ -39,19 +39,19 @@ namespace DS
         {
             new GuestRequest()
             {
-                Status=My_enum.Status.Open,
+                Status=My_enum.Status.טרם_טופל,
                 RegistrationDate=new DateTime(12/12/2020),
                 EntryDate=new DateTime(14/12/2020),
                 ReleaseDate=new DateTime(18/12/2020),
-                Area=My_enum.Area.Center,
+                Area=My_enum.Area.מרכז,
                 SubArea="Ashdod",
-                Type=My_enum.Type.Hotel,
+                Type=My_enum.Type.מלון,
                 Adults=3,
                 Children=4,
-                Pool=My_enum.Areaoptions.Possible,
-                Jacuzzi=My_enum.Areaoptions.Not_Interested,
-                Garden=My_enum.Areaoptions.Necessary,
-                ChildrensAttractions=My_enum.Areaoptions.Possible,
+                Pool=My_enum.Areaoptions.אפשרי,
+                Jacuzzi=My_enum.Areaoptions.הכרחי,
+                Garden=My_enum.Areaoptions.לא_מעוניין,
+                ChildrensAttractions=My_enum.Areaoptions.אפשרי,
 
             }
 
@@ -60,7 +60,7 @@ namespace DS
         {
             new Order()
             {
-               Status=My_enum.Status.Open,
+               Status=My_enum.Status.טרם_טופל,
                CreateDate=new DateTime(14/12/2020),
                OrderDate=new DateTime(18/12/2020),
                Amount_to_pay= 1023,

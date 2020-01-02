@@ -98,7 +98,7 @@ namespace BE
                  "ChildrensAttractions" + ChildrensAttractions + "/n";
 
         }
-        public GuestRequest() // defult constactor
+        /*public GuestRequest() // defult constactor
         {
             n_guest_requestKey++;
             guest_requestKey = n_guest_requestKey;
@@ -129,7 +129,7 @@ namespace BE
             Garden = my_Garden;
             ChildrensAttractions = my_ChildrensAttractions;
         }
-
+        */
         public static bool EmailVerify(string mailAddress) //בדיקת תקינות למייל 
         {
             try

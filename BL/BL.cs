@@ -14,7 +14,7 @@ namespace BL
             throw new NotImplementedException();
         }
 
-        public void addHostingUnit(HostingUnit My_HostingUnit)
+        public void AddHostingUnit(HostingUnit My_HostingUnit)
         {
             throw new NotImplementedException();
         }
