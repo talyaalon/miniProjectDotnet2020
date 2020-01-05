@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BE;
 using BL;
+using BE;
 
 namespace PLWPF
 {
@@ -22,10 +22,14 @@ namespace PLWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        IBL bl = BL.Factory_BL.getBL();
         public MainWindow()
         {
+            IBL my_BL;
+
+
             InitializeComponent();
-             
+          
         }
     }
 }

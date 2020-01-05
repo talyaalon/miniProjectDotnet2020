@@ -185,10 +185,7 @@ namespace BL
                                item2.Type + ":" + " " +
 
                             ":הרכב" + "  " + ":מספר מבוגרים" + item2.Adults + "  " + ":מספר ילדים" + item2.Children + "/n";
-
-
-
-
+             
                             ;
 
                         }
@@ -383,19 +380,47 @@ namespace BL
         }
         public List<GuestRequest> use_delegate(some_delegate delegete)
         {
-                List<GuestRequest> returnList = new List<GuestRequest>();
-                foreach (var item in DataSource.My_GuestRequestsList)
+            List<GuestRequest> returnList = new List<GuestRequest>();
+            foreach (var item in DataSource.My_GuestRequestsList)
+            {
+                if (delegete(item))
                 {
-                    if (delegete(item))
-                    {
-                        returnList.Add(item);
-                    }
+                    returnList.Add(item);
                 }
-                return returnList;
             }
-
+            return returnList;
 
         }
+    
+       //Grouping 
+        public IEnumerable<IGrouping<My_enum.Area, GuestRequest>> GetGuestRequestsByArea()
+        {
+        return from item in dal.My_GuestRequestList()
+               group item by item.Area into List
+               select List;
+        }
+        public IEnumerable<IGrouping<int, GuestRequest>> GetGuestRequestsByPoeple()
+        {
+            return from item in dal.My_GuestRequestList()
+                   group item by (item.Adults+item.Children) into List
+                   select List;
+        }
+        public IEnumerable<IGrouping<string , HostingUnit>> NumOfHostUnit()
+        {
+            return from item in dal.My_HostingUnitList()
+                   group item by (item.Owner.HostKey)
+                   into List
+                   select List;
+        }
+        public IEnumerable<IGrouping<My_enum.Area, GuestRequest>> GetHostingUnitByArea()
+        {
+            return from item in dal.My_GuestRequestList()
+                   group item by (item.Area)
+                   into List
+                   select List;
+        }
+       
+
     }
 }
 

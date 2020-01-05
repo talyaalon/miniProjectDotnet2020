@@ -7,8 +7,8 @@ using BE;
 
 namespace BL
 {
-    interface IBL
-    {
+   public interface IBL
+   {
         void addGuestRequest(GuestRequest My_GuestRequest);//הוספת דרישת לקוח
         void Requirement_update(GuestRequest My_GuestRequest); //עידכון דרישת לקוח
 

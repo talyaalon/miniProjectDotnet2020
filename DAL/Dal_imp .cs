@@ -130,10 +130,6 @@ namespace DAL
         }
         public void UpdateHostingUnit(HostingUnit My_HostingUnit)
         {
-
-
-            public void UpdateHostingUnit(HostingUnit My_HostingUnit)
-        {
             foreach (var item in DataSource.My_HostingUnitList)
             {
                 if (item.n_hosting_unit == My_HostingUnit.n_hosting_unit)
