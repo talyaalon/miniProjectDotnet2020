@@ -12,7 +12,7 @@ namespace BE
     public class GuestRequest
     {
         public static long guest_requestKey = Configuration.GuestRequestKey;
-        public long n_guest_requestkey
+        public long guest_request_key
         {
             get
             {
@@ -98,25 +98,24 @@ namespace BE
                  "ChildrensAttractions" + ChildrensAttractions + "/n";
 
         }
-        /*public GuestRequest() // defult constactor
+        public GuestRequest() // defult constactor
         {
-            n_guest_requestKey++;
-            guest_requestKey = n_guest_requestKey;
-            PrivateName = "";
-            FamilyName = "";
-            MailAddress = "";
-            RegistrationDate = new DateTime();
-            EntryDate = new DateTime();
-            ReleaseDate = new DateTime();
+
         }
-        public GuestRequest(string my_PrivateName, string my_FamilyName,
-            string my_MailAddress, DateTime my_EntryDate, DateTime my_ReleaseDate,
-            My_enum.Area my_Area, string my_SubArea, My_enum.Type my_Type,
-            int my_Adults, int my_Children, My_enum.Areaoptions my_Pool,
-            My_enum.Areaoptions my_Jacuzzi, My_enum.Areaoptions my_Garden, My_enum.Areaoptions my_ChildrensAttractions) //constarctor
+        // constractor
+        public GuestRequest(My_enum.Status my_status=0, DateTime my_RegistrationDate = new DateTime(),
+            string my_PrivateName=" ", string my_FamilyName=" ",
+            string my_MailAddress=" ",DateTime my_EntryDate= new DateTime() ,
+            DateTime my_ReleaseDate= new DateTime(), My_enum.Area my_Area=0, string my_SubArea=" ", 
+            My_enum.Type my_Type=0,int my_Adults=0, int my_Children=0, My_enum.Areaoptions my_Pool= 0,
+            My_enum.Areaoptions my_Jacuzzi=0, My_enum.Areaoptions my_Garden=0, 
+            My_enum.Areaoptions my_ChildrensAttractions=0) 
         {
-            Status = 0; //Status= close
-            RegistrationDate = new DateTime();
+            Status = my_status; 
+            RegistrationDate = my_RegistrationDate;
+            PrivateName = my_PrivateName;
+            FamilyName= my_FamilyName;
+            MailAddress= my_MailAddress;
             EntryDate = my_EntryDate;
             ReleaseDate = my_ReleaseDate;
             Area = my_Area;
@@ -129,7 +128,7 @@ namespace BE
             Garden = my_Garden;
             ChildrensAttractions = my_ChildrensAttractions;
         }
-        */
+        
         public static bool EmailVerify(string mailAddress) //בדיקת תקינות למייל 
         {
             try

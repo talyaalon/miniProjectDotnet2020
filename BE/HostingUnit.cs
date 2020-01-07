@@ -9,7 +9,7 @@ namespace BE
     public class HostingUnit
     {
         public static long hosting_unit = Configuration.HostingUnitKey;
-        public long n_hosting_unit
+        public long hosting_unit_key
         {
             get
             {
@@ -83,32 +83,17 @@ namespace BE
         //diffult constractor
         public HostingUnit()
         {
-            for (int i = 0; i < 12; i++)   //איתחול המטריצה 
-            {
-                for (int j = 0; j < 31; j++)
-                {
-                    Diary[i, j] = false;
-                }
-            }
-            hosting_unit++;
+          
         }
 
 
         //constractor:
-        public HostingUnit(Host my_Owner)
+        public HostingUnit(Host Owner, bool[,] Diary, string my_HostingUnitName = " ")
         {
-            for (int i = 0; i < 12; i++)   //איתחול המטריצה 
-            {
-                for (int j = 0; j < 31; j++)
-                {
-                    Diary[i, j] = false;
-                }
-            }
-            hosting_unit++;
-            Owner = my_Owner;
-
+            HostingUnitName = my_HostingUnitName;
 
         }
+    
     }
         
 

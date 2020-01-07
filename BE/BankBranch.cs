@@ -29,18 +29,15 @@ namespace BE
         {
 
         }
-
         //constractor
-        public BankBranch(int My_BankNumber, string My_BankName, int My_BranchNumber, 
-            string My_BranchAddress, string My_BranchCity, string My_BankAccountNumber)
+        public BankBranch(int My_BankNumber, string My_BankName, int My_BranchNumber,
+            string My_BranchAddress, string My_BranchCity)
         {
             BankNumber = My_BankNumber;
             BankName = My_BankName;
             BranchNumber = My_BranchNumber;
             BranchAddress = My_BranchAddress;
             BranchCity = My_BranchCity;
-            BankAccountNumber = My_BankAccountNumber;
-
         }
     }
 }

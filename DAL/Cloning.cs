@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
 
 namespace DAL
 {
@@ -10,17 +11,27 @@ namespace DAL
     {
         public static GuestRequest Clone(this GuestRequest original)
         {
-            GuestRequest target = new GuestRequest();
-            target.id = original.id;
- 
+            GuestRequest target = new GuestRequest(original.Status, original.RegistrationDate, original.PrivateName, original.FamilyName, original.MailAddress,  original.EntryDate, original.ReleaseDate, original.Area, original.SubArea, original.Type, original.Adults, original.Children, original.Pool, original.Jacuzzi, original.Garden, original.ChildrensAttractions);
+            target.guest_request_key = original.guest_request_key;
             return target;
         }
-        public static Lecture Clone(this Lecture original)
+        public static BankBranch Clone(this BankBranch original)
         {
-            Lecture target = new Lecture();
-            target.id = original.id;
- ...
- return target;
+            BankBranch target = new BankBranch(original.BankNumber, original.BankName, original.BranchNumber, original.BranchAddress, original.BranchCity);
+            //target.id = original.id
+            return target;
         }
-
+        public static Order Clone(this Order original)
+        {
+            Order target = new Order(original.HostingUnitKey, original.GuestRequestKey, original.Status, original.OrderDate, original.CreateDate, original.Amount_to_pay);
+            target.Order_key = original.Order_key;
+            return target;
+        }
+        public static HostingUnit Clone(this HostingUnit original)
+        {
+            HostingUnit targets = new HostingUnit(original.Owner, original.Diary, original.HostingUnitName);
+            targets.hosting_unit_key = original.hosting_unit_key;
+            return targets;
+        }
     }
+}

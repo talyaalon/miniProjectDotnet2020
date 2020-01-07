@@ -85,7 +85,8 @@ namespace BE
                 EmailVerify(MailAddress);
             }
         }
-        public BankBranch BankAccuont { get; set; }
+        public int BankAccountNumber { get; set; }
+        public BankBranch BankAccuont { get; set; }//פרטי סניף הבנק
         public My_enum.Yes_Or_No CollectionClearance { get; set; }// אישור גבייה מחשבון בנק
         public override string ToString()
         {
@@ -118,17 +119,17 @@ namespace BE
 
 
         // constractor
-        public Host(string my_HostKey, string my_PrivateName, string my_FamilyName, string my_FhoneNumber, string my_MailAddress) //constractor
+        public Host(BankBranch my_BankAccuont, string my_PrivateName = " ",
+            string my_FamilyName = " ", string my_FhoneNumber = " ",
+            string my_MailAddress = " ", int my_BankAccountNumber = 00000, My_enum.Yes_Or_No my_CollectionClearance = 0) 
         {
-            HostKey = my_HostKey;
-            PrivateName = my_PrivateName;
-            FamilyName = my_FamilyName;
-            FhoneNumber = my_FhoneNumber;
-            MailAddress = my_MailAddress;
-
+           PrivateName = my_PrivateName;
+           FamilyName = my_FamilyName;
+           FhoneNumber = my_FhoneNumber;
+           MailAddress = my_MailAddress;
+           BankAccountNumber = my_BankAccountNumber;
+           BankAccuont = my_BankAccuont;
+           CollectionClearance = my_CollectionClearance;
         }
-
     }
-    
-
 }

@@ -86,6 +86,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\BE.BankBranch.datasource" />
+    <None Include="Properties\DataSources\BE.BE.datasource" />
+    <None Include="Properties\DataSources\BE.Configuration.datasource" />
+    <None Include="Properties\DataSources\BE.GuestRequest.datasource" />
+    <None Include="Properties\DataSources\BE.Host.datasource" />
+    <None Include="Properties\DataSources\BE.HostingUnit.datasource" />
+    <None Include="Properties\DataSources\BE.My_enum+Area.datasource" />
+    <None Include="Properties\DataSources\BE.My_enum+Areaoptions.datasource" />
+    <None Include="Properties\DataSources\BE.My_enum+Status.datasource" />
+    <None Include="Properties\DataSources\BE.My_enum+Type.datasource" />
+    <None Include="Properties\DataSources\BE.My_enum+Yes_Or_No.datasource" />
+    <None Include="Properties\DataSources\BE.My_enum.datasource" />
+    <None Include="Properties\DataSources\BE.Order.datasource" />
+    <None Include="Properties\DataSources\BL.BL.datasource" />
+    <None Include="Properties\DataSources\BL.Factory_BL.datasource" />
+    <None Include="Properties\DataSources\BL.IBL.datasource" />
+    <None Include="Properties\DataSources\BL.IBL_imp.datasource" />
+    <None Include="Properties\DataSources\BL.some_delegate.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

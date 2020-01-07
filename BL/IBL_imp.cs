@@ -37,7 +37,7 @@ namespace BL
             //נקודה 4:
             foreach (var item in DataSource.My_OrdersList)
             {
-                if (item.n_Order == My_Order.n_Order)
+                if (item.Order_key == My_Order.Order_key)
                 {
                     if (item.Status == My_enum.Status.ההזמנה_אושרה)
                     {
@@ -50,13 +50,13 @@ namespace BL
             //נקודה 5:
             foreach (var item in DataSource.My_OrdersList)
             {
-                if (item.n_Order == My_Order.n_Order)
+                if (item.Order_key == My_Order.Order_key)
                 {
                     if (item.Status == My_enum.Status.ההזמנה_אושרה)
                     {
                         foreach (var item2 in DataSource.My_GuestRequestsList)
                         {
-                            if (item2.n_guest_requestkey == My_Order.GuestRequestKey)
+                            if (item2.guest_request_key == My_Order.GuestRequestKey)
                             {
                                 int days = item2.ReleaseDate.Day - item2.EntryDate.Day;
                                 Configuration.sum_of_fees = 10 * days;
@@ -69,7 +69,7 @@ namespace BL
             //נקודה 2:
             foreach (var item in DataSource.My_HostingUnitList)
             {
-                if (item.n_hosting_unit == My_Order.HostingUnitKey)
+                if (item.hosting_unit_key == My_Order.HostingUnitKey)
                 {
                     if (item.Owner.CollectionClearance == My_enum.Yes_Or_No.לא)
                     {
@@ -96,12 +96,12 @@ namespace BL
             bool approved = true;
             foreach (var item in DataSource.My_GuestRequestsList)
             {
-                if (item.n_guest_requestkey == My_Order.GuestRequestKey)
+                if (item.guest_request_key == My_Order.GuestRequestKey)
                 {
                     int days = item.ReleaseDate.Day - item.EntryDate.Day;
                     foreach (var item2 in DataSource.My_HostingUnitList)
                     {
-                        if (item2.n_hosting_unit == My_Order.HostingUnitKey)
+                        if (item2.hosting_unit_key == My_Order.HostingUnitKey)
                         {
                             for (int index = 0; index < days - 1; index++, item.EntryDate = item.EntryDate.AddDays(1))
                             {
@@ -126,12 +126,12 @@ namespace BL
                 //נקודה 6:
                 foreach (var item in DataSource.My_GuestRequestsList)
                 {
-                    if (item.n_guest_requestkey == My_Order.GuestRequestKey)
+                    if (item.guest_request_key == My_Order.GuestRequestKey)
                     {
                         item.Status = My_enum.Status.ההזמנה_אושרה; //נקודה 7:
                         foreach (var item2 in DataSource.My_OrdersList)
                         {
-                            if (item.n_guest_requestkey == item2.GuestRequestKey)
+                            if (item.guest_request_key == item2.GuestRequestKey)
                             {
                                 item2.Status = My_enum.Status.ההזמנה_אושרה;
                             }
@@ -140,7 +140,7 @@ namespace BL
                         int days = item.ReleaseDate.Day - item.EntryDate.Day;
                         foreach (var item2 in DataSource.My_HostingUnitList)
                         {
-                            if (item2.n_hosting_unit == My_Order.HostingUnitKey)
+                            if (item2.hosting_unit_key == My_Order.HostingUnitKey)
                             {
                                 for (int index = 0; index < days - 1; index++, item.EntryDate = item.EntryDate.AddDays(1))
                                 {
@@ -156,7 +156,7 @@ namespace BL
 
         //נקודה 10:
         public void Sent_Mail(Order My_Order)
-        {
+        {/*
             string name_hostingunit;
             MailMessage mail = new MailMessage();
             mail.Subject = "פרטי הזמנה";
@@ -166,12 +166,12 @@ namespace BL
                 {
                     foreach (var item2 in DataSource.My_GuestRequestsList)
                     {
-                        if (item2.n_guest_requestkey == My_Order.GuestRequestKey)
+                        if (item2.guest_request_key == My_Order.GuestRequestKey)
                         {
                             mail.To.Add(item2.MailAddress); //כתובת המייל של הלקוח
                             foreach (var item3 in DataSource.My_HostingUnitList)
                             {
-                                if (item3.n_hosting_unit == My_Order.GuestRequestKey)
+                                if (item3.hosting_unit_key == My_Order.GuestRequestKey)
                                 {
                                     mail.From = new MailAddress(item3.Owner.MailAddress);
                                 }
@@ -207,7 +207,7 @@ namespace BL
             catch (Exception ex)
             {
                 txtMessage.Text = ex.ToString();
-            }
+            }*/
         }
 
 
@@ -255,7 +255,7 @@ namespace BL
             //נקודה 8:
             foreach (var item in DataSource.My_OrdersList)
             {
-                if (item.HostingUnitKey == My_HostingUnit.n_hosting_unit)
+                if (item.HostingUnitKey == My_HostingUnit.hosting_unit_key)
                 {
                     if (item.Status == My_enum.Status.טרם_טופל)
                     {
@@ -355,7 +355,7 @@ namespace BL
             int count = 0;
             foreach (var item in DataSource.My_OrdersList)
             {
-                if (item.GuestRequestKey == My_GuestRequest.n_guest_requestkey)
+                if (item.GuestRequestKey == My_GuestRequest.guest_request_key)
                 {
                     count++;
                 }
@@ -367,7 +367,7 @@ namespace BL
             int count = 0;
             foreach(var item in DataSource.My_OrdersList)
             {
-                if(item.HostingUnitKey== My_HostingUnit.n_hosting_unit)
+                if(item.HostingUnitKey== My_HostingUnit.hosting_unit_key)
                 {
                     if (item.Status == My_enum.Status.נשלח_מייל || item.Status == My_enum.Status.ההזמנה_אושרה)
                     {

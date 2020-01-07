@@ -9,7 +9,7 @@ namespace BE
     public class Order
     {
         public static long order = Configuration.OrderKey;
-        public long n_Order
+        public long Order_key
         {
             get
             {
@@ -36,12 +36,19 @@ namespace BE
                    "OrderDate: " + OrderDate + "\n" +
                    "Amount_to_pay: " + Amount_to_pay + "\n";
         }
-        //constractor:
+        //diffult constractor:
         public Order()
-        {
-            order++;
-          
+        { 
 
+        }
+        //constractor:
+        public Order(long  My_HostingUnitKey,long  my_GuestRequestKey, My_enum.Status my_Status=0,
+            DateTime my_CreateDate= new DateTime(), DateTime my_OrderDate = new DateTime(), double my_Amount_to_pay=0)
+        { 
+            Status = my_Status;
+            CreateDate = my_CreateDate;
+            OrderDate = my_OrderDate;
+            Amount_to_pay = my_Amount_to_pay;
         }
     }
 }

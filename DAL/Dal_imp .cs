@@ -22,7 +22,7 @@ namespace DAL
             bool ezer = false;
             foreach (var item in DataSource.My_GuestRequestsList)
             {
-                if (item.n_guest_requestkey == My_GuestRequest.n_guest_requestkey)
+                if (item.guest_request_key == My_GuestRequest.guest_request_key)
                 {
                     ezer = true;
                 }
@@ -42,7 +42,7 @@ namespace DAL
             bool ezer = false;
             foreach (var item in DataSource.My_GuestRequestsList)
             {
-                if (item.n_guest_requestkey == My_GuestRequest.n_guest_requestkey)
+                if (item.guest_request_key == My_GuestRequest.guest_request_key)
                 {
                     ezer = true;
                     item.Status = My_GuestRequest.Status;
@@ -79,7 +79,7 @@ namespace DAL
         public void addHostingUnit(HostingUnit My_HostingUnit, List<HostingUnit> My_HostUnitList)
         {
             var L = from item in My_HostUnitList
-                    where (My_HostingUnit.n_hosting_unit == item.n_hosting_unit)
+                    where (My_HostingUnit.hosting_unit_key == item.hosting_unit_key)
                     select item;
             if (L == null)
             {
@@ -116,7 +116,7 @@ namespace DAL
         public void deleteHostingUnit(HostingUnit My_HostingUnit, List<HostingUnit> My_HostUnitList)
         {
             var L = from item in My_HostUnitList
-                    where (My_HostingUnit.n_hosting_unit == item.n_hosting_unit)
+                    where (My_HostingUnit.hosting_unit_key == item.hosting_unit_key)
                     select item;
             if (L == null)
             {
@@ -132,7 +132,7 @@ namespace DAL
         {
             foreach (var item in DataSource.My_HostingUnitList)
             {
-                if (item.n_hosting_unit == My_HostingUnit.n_hosting_unit)
+                if (item.hosting_unit_key == My_HostingUnit.hosting_unit_key)
                 {
                     DataSource.My_HostingUnitList.Remove(item);
                     Configuration.HostingUnitKey--;
@@ -147,7 +147,7 @@ namespace DAL
             bool ezer = false;
             foreach (var item in DataSource.My_OrdersList)
             {
-                if (item.n_Order == My_Order.n_Order)
+                if (item.Order_key == My_Order.Order_key)
                 {
                     ezer = true;
                 }
@@ -169,7 +169,7 @@ namespace DAL
             bool ezer = false;
             foreach (var item in DataSource.My_OrdersList)
             {
-                if (item.n_Order == My_Order.n_Order)
+                if (item.Order_key == My_Order.Order_key)
                 {
                     ezer = true;
                     item.Status = My_Order.Status;
@@ -185,17 +185,29 @@ namespace DAL
 
         public List<HostingUnit> My_HostingUnitList()
         {
-            return DataSource.My_HostingUnitList;
+            if (DataSource.My_HostingUnitList == null)
+            {
+                throw new Exception("רשימת יחידות האירוח ריקה");
+            }
+            return DataSource.My_HostingUnitList.Select(hu => (HostingUnit)hu.Clone()).ToList();
         }
 
         public List<GuestRequest> My_GuestRequestList()
         {
-            return DataSource.My_GuestRequestsList;
+            if (DataSource.My_GuestRequestsList == null)
+            {
+                throw new Exception("רשימת דרישות לקוח ריקה");
+            }
+            return DataSource.My_GuestRequestsList.Select(hu => (GuestRequest)hu.Clone()).ToList();
         }
 
         public List<Order> My_OrdersList()
         {
-            return DataSource.My_OrdersList;
+            if (DataSource.My_OrdersList == null)
+            {
+                throw new Exception("רשימת הזמנות ריקה");
+            }
+            return DataSource.My_OrdersList.Select(hu => (Order)hu.Clone()).ToList();
         }
 
         public List<BankBranch> My_BankBranchList()
@@ -249,6 +261,16 @@ namespace DAL
                 },
             };
             return My_BankBranches; 
+        }
+
+        public void addHostingUnit(HostingUnit My_HostingUnit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void deleteHostingUnit(HostingUnit My_HostingUnit)
+        {
+            throw new NotImplementedException();
         }
     }
 }
