@@ -16,6 +16,15 @@ namespace BL
         void deleteHostingUnit(long hosting_unit); //מחיקת יחידת אירוח
         void UpdateHostingUnit(HostingUnit My_HostingUnit);
 
+        void AddGuest(MyGuest My_Guest); //פונקציה שמוסיפה לרשימה של האורחים שרשומים למערכת עוד איבר
+        void AddHost(MyHost My_Host);// פונקציה שמוסיפה לרשימה של המארחים שרשומים למערכת עוד איבר
+        MyGuest getMyGuest(int Location_list);//מחזיר (נואד) מתוך הרשימה לפי התז שהתקבל
+        MyHost getMyHost(int Location_list);//    "
+        int FindMyGuest(string id);//מחזיר מיקום ברשימה של התז המבוקשת
+        int FindMyHost(string id);//מחזיר מיקום ברשימה של התז המבוקשת
+
+
+        double Calculation_amount_to_pay(Order My_Order);
         void addOrder(Order My_Order);
         void UpdateOrder(Order My_Order);
 
@@ -25,8 +34,7 @@ namespace BL
         List<GuestRequest> use_delegate(some_delegate delegete); //פונקציה 4
         int Number_of_orders(GuestRequest My_GuestRequest); //פונקציה 5
         int Number_of_orders_accepted(HostingUnit My_HostingUnit);//פונקציה 6
-
-
+       
         //functions which returns access to the lists:
         List<HostingUnit> My_HostingUnitList();
         List<GuestRequest> My_guestRequestsList();

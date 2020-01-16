@@ -40,7 +40,8 @@ namespace BE
             }
         }
         public bool[,] Diary = new bool[12, 31];  //מטריצה 
-
+        public double price_Of_Night_To_Adult;
+        public double price_Of_Night_To_Child;
         public string ezerToString()
         {
             int day = 0, month = 0;
@@ -79,6 +80,7 @@ namespace BE
                 "HostingUnitName: " + HostingUnitName + "/n" +
                 "The busy days are: " + "/n" + ezerToString();
         }
+        
 
         //diffult constractor
         public HostingUnit()

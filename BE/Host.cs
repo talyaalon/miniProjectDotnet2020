@@ -63,7 +63,7 @@ namespace BE
         {
             get { return FhoneNumber; }
             set       //בדיקת תקינות למספר טלפון
-            { 
+            {
                 if (value.Length != 10)
                     throw new ArgumentException("מספר הספרות אינו תואם את הנדרש!");
                 for (int i = 0; i < value.Length; i++)
@@ -74,6 +74,7 @@ namespace BE
                 FhoneNumber = value;
             }
         }
+
         public string MailAddress
         {
             get
@@ -85,9 +86,12 @@ namespace BE
                 EmailVerify(MailAddress);
             }
         }
+        public double Adult_price_per_night { get; set; }
+        public double Child_price_per_night { get; set; }
         public int BankAccountNumber { get; set; }
         public BankBranch BankAccuont { get; set; }//פרטי סניף הבנק
         public My_enum.Yes_Or_No CollectionClearance { get; set; }// אישור גבייה מחשבון בנק
+        public string Password { get; set; }
         public override string ToString()
         {
             return "HostKey: " + HostKey + "/n" +
@@ -95,6 +99,8 @@ namespace BE
                 "FamilyName: " + FamilyName + "/n" +
                 "FhoneNumber: " + FhoneNumber + "/n" +
                 "MailAddress: " + MailAddress + "/n" +
+                "Adult_price_per_night" + Adult_price_per_night + "/n"+
+                "Child_price_per_night" + Child_price_per_night + "/n" +
                 "BankAccuont: " + BankAccuont + "/n" +
                 "CollectionClearance: " + CollectionClearance + "/n";
         }
@@ -111,6 +117,8 @@ namespace BE
                 return false;
             }
         }
+
+ 
         //diffult constractor
         public Host()
         {
@@ -121,15 +129,20 @@ namespace BE
         // constractor
         public Host(BankBranch my_BankAccuont, string my_PrivateName = " ",
             string my_FamilyName = " ", string my_FhoneNumber = " ",
-            string my_MailAddress = " ", int my_BankAccountNumber = 00000, My_enum.Yes_Or_No my_CollectionClearance = 0) 
+            string my_MailAddress = " ", double My_Adult_price_per_night = 100,
+            double My_Child_price_per_night=60, int my_BankAccountNumber = 00000, 
+            My_enum.Yes_Or_No my_CollectionClearance = 0, string My_Password = " ") 
         {
            PrivateName = my_PrivateName;
            FamilyName = my_FamilyName;
            FhoneNumber = my_FhoneNumber;
            MailAddress = my_MailAddress;
+           Adult_price_per_night = My_Adult_price_per_night;
+           Child_price_per_night = My_Child_price_per_night;
            BankAccountNumber = my_BankAccountNumber;
            BankAccuont = my_BankAccuont;
            CollectionClearance = my_CollectionClearance;
+           Password = My_Password;
         }
     }
 }

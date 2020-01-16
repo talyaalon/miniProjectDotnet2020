@@ -3,10 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" >
+    <Window.Resources>
+        <Style x:Key="ImageStyle1" TargetType="{x:Type Image}"/>
+
+    </Window.Resources>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="20" BorderThickness="3" Margin="0,0,0.333,-9.333" Grid.RowSpan="2">
+            <Border.BorderBrush>
+                <ImageBrush Stretch="None"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <ImageBrush ImageSource="נוף איטליה לרוחב.jpg" Opacity="0.8"/>
+            </Border.Background>
+
+            <Grid RenderTransformOrigin="14.351,3.641" Margin="-2.667,-2.667,58,-3.333">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="21*"/>
+                    <ColumnDefinition Width="17*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="  ברוכים הבאים&#xD;&#xA;             לאתר הנופש: &#xD;&#xA;&#xD;&#xA;E &amp; T  - VACATION&#xD;&#xA;     " RenderTransformOrigin="11.86,3.179" Height="345" VerticalAlignment="Top" Margin="288,65,-56,0" FontSize="48"  Foreground="#FFDE4B31" FlowDirection="RightToLeft" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <Button x:Name="Guest" Content="אורח" Cursor="Hand" FontSize="24" Margin="53,65,157.667,302" Height="Auto" Click="Guest_Click" RenderTransformOrigin="0.5,0.5" Background="#FFDBA7B1" FontFamily="Segoe UI Black" FontWeight="Bold"   />
+                <Button x:Name="Host" Content="מארח " Cursor="Hand" FontSize="24" Margin="53,187,157.667,180" Height="Auto" Click="Host_Click" RenderTransformOrigin="0.5,0.5" Background="#FFDBA7B1" FontFamily="Segoe UI Black" FontWeight="Bold"   />
+                <Button x:Name="Admin" Content="מנהל האתר" Cursor="Hand" FontSize="24" Margin="53,310,157.667,57" Height="Auto" Click="Admin_Click" RenderTransformOrigin="0.5,0.5" Background="#FFDBA7B1" FontFamily="Segoe UI Black" FontWeight="Bold"   />
+                <Button x:Name="exit"  Click="exit_Click" Margin="327.333,10,-56,370" Height="Auto" HorizontalAlignment="Left" Width="56" RenderTransformOrigin="0.5,0.5" Grid.Column="1" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="סופי תמונה של איקס  החתוך.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

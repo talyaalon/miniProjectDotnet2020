@@ -55,6 +55,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Add_GeustRequst.xaml.cs">
+      <DependentUpon>Add_GeustRequst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Window.xaml.cs">
+      <DependentUpon>Admin_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox_Project.xaml.cs">
+      <DependentUpon>MessageBox_Project.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyAdminWindow.xaml.cs">
+      <DependentUpon>MyAdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyGuestWindow.xaml.cs">
+      <DependentUpon>MyGuestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyHostWindow.xaml.cs">
+      <DependentUpon>MyHostWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window_Password.xaml.cs">
+      <DependentUpon>Window_Password.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Add_GeustRequst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostUnitMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +106,37 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HostUnitMainWindow.xaml.cs">
+      <DependentUpon>HostUnitMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MessageBox_Project.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyGuestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyHostWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -121,6 +191,42 @@
       <Project>{1d82510b-352f-43ec-b191-ccc13eabf14b}</Project>
       <Name>BL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pictures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="957922e4-ba51-425a-b085-20ab1ea3e659.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="נוף איטליה לרוחב.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="רקע שקוף2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="רקע שקוף21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="רקע שקוף22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="נוף 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="הוספת דרישת לקוח.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="הוספת דרישת לקוח %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="תמונה של איקס.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="סופי תמונה של איקס  החתוך.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="מסך בית.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

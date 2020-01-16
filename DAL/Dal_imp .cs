@@ -56,26 +56,7 @@ namespace DAL
             }
         }
 
-        /*void IDAL.addHostingUnit(HostingUnit My_HostingUnit) //הוספת יחידת אירוח
-        {
-            bool ezer = false;
-            foreach (var item in DataSource.My_HostingUnitList)
-            {
-                if (item.n_hosting_unit == My_HostingUnit.n_hosting_unit)
-                {
-                    ezer = true;
-                }
-            }
-            if (ezer == false)
-            {
-                DataSource.My_HostingUnitList.Add(My_HostingUnit);
-                Configuration.HostingUnitKey++;
-            }
-            else
-            {
-                throw new NotImplementedException("The unit is already on the list");
-            }
-        }*/
+        
         public void addHostingUnit(HostingUnit My_HostingUnit, List<HostingUnit> My_HostUnitList)
         {
             var L = from item in My_HostUnitList
@@ -95,24 +76,6 @@ namespace DAL
         }
 
 
-
-        /*public void deleteHostingUnit(HostingUnit My_HostingUnit)
-        {
-            bool ezer = false;
-            foreach (var item in DataSource.My_HostingUnitList)
-            {
-                if (item.n_hosting_unit == My_HostingUnit.n_hosting_unit)
-                {
-                    ezer = true;
-                    DataSource.My_HostingUnitList.Remove(My_HostingUnit);
-                    Configuration.HostingUnitKey--;
-                }
-            }
-            if (ezer == false)
-            {
-                throw new NotImplementedException("not found");
-            }
-        }*/
         public void deleteHostingUnit(HostingUnit My_HostingUnit, List<HostingUnit> My_HostUnitList)
         {
             var L = from item in My_HostUnitList

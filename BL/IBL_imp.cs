@@ -7,6 +7,8 @@ using System.Net.Mail;
 using BE;
 using DAL;
 using DS;
+using System.IO;
+using System.Net;
 
 namespace BL
 {
@@ -20,12 +22,161 @@ namespace BL
             dal = DAL.Factory_DAL.getDal();
         }
 
+        public void AddGuest(MyGuest My_Guest)
+        {
+            bool ezer = false;
+            foreach (var item in DataSource.MyGuest_List)
+            {
+                if(item.Id== My_Guest.Id)
+                {
+                    ezer = true;
+                }
+            }
+            if (ezer == false) //אין את הלקוח ברשימה
+            {
+                DataSource.MyGuest_List.Add(My_Guest);
+            }
+            else
+            {
+                throw new NotImplementedException("האורח כבר רשום במערכת");
+            }
+        }
+
+        public void AddHost(MyHost My_Host)
+       {
+
+            bool ezer = false;
+            foreach (var item in DataSource.MyHost_List)
+            {
+                if (item.Id == My_Host.Id)
+                {
+                    ezer = true;
+                }
+            }
+            if (ezer == false) //אין את הלקוח ברשימה
+            {
+                DataSource.MyHost_List.Add(My_Host);
+            }
+            else
+            {
+                throw new NotImplementedException("המארח כבר רשום במערכת");
+            }
+       }
+
+        public int FindMyGuest(string id)
+        {
+            int Location = 1;
+            bool help = false;
+            foreach (var item in DataSource.MyGuest_List)
+            {
+               if(item.Id== id)
+               {
+                    help = true;
+                    return Location;
+                    
+               }
+               Location++;
+            }
+            if (help == false)
+            {
+                throw new NotImplementedException("האורח לא נמצא במערכת");
+            }
+            return 0;
+        }
+
+        public int FindMyHost(string id)
+        {
+            int Location = 1;
+            bool help = false;
+            foreach (var item in DataSource.MyHost_List)
+            {
+                if (item.Id == id)
+                {
+                    help = true;
+                    return Location;
+
+                }
+                Location++;
+            }
+            if (help == false)
+            {
+                throw new NotImplementedException("המארח לא נמצא במערכת");
+            }
+            return 0;
+        }
+
+        public int FindGuestRequest(long key)
+        {
+            int Location = 1;
+            bool help = false;
+            foreach (var item in DataSource.My_GuestRequestsList)
+            {
+                if (item.guest_request_key == key)
+                {
+                    help = true;
+                    return Location;
+                }
+                Location++;
+            }
+            if (help == false)
+            {
+                throw new NotImplementedException("דרישת הלקוח לא נמצאה במערכת");
+            }
+            return 0;
+        }
+
+        public int FindHostingUnit(long key)
+        {
+            int Location = 1;
+            bool help = false;
+            foreach (var item in DataSource.My_HostingUnitList)
+            {
+                if (item.hosting_unit_key == key)
+                {
+                    help = true;
+                    return Location;
+
+                }
+                Location++;
+            }
+            if (help == false)
+            {
+                throw new NotImplementedException("יחידת האירוח לא נמצאה במערכת");
+            }
+            return 0;
+        }
+
+        public MyGuest getMyGuest(int Location_list)
+        {
+            return DataSource.MyGuest_List[Location_list];
+        }
+
+        
+        public MyHost getMyHost(int Location_list)
+        {
+            return DataSource.MyHost_List[Location_list];
+        }
+
+
+        public GuestRequest getGuestRequest(int Location_list)
+        {
+            return DataSource.My_GuestRequestsList[Location_list];
+        }
+
+
+        public HostingUnit getHostingUnit(int Location_list)
+        {
+            return DataSource.My_HostingUnitList[Location_list];
+        }
+
+
+
         public void addGuestRequest(GuestRequest My_GuestRequest)
         {
             //נקודה 1
             if (My_GuestRequest.EntryDate.Day - My_GuestRequest.ReleaseDate.Day < 1)
             {
-                throw new NotImplementedException("תאריך הכניסה שהכנסצ אינו תקין" + "/n" + "בבקשה הכנס תאריך חדש");
+                throw new NotImplementedException("תאריך הכניסה שהכנסת אינו תקין" + "/n" + "בבקשה הכנס תאריך חדש");
 
             }
             dal.AddGuestRequest(My_GuestRequest);
@@ -79,8 +230,7 @@ namespace BL
                     {
                         My_Order.Status = My_enum.Status.נשלח_מייל;
                         //נקודה 10:
-                        Console.WriteLine("נשלח אלייך מייל עם פרטי ההזמנה");
-
+                       // MessageBox_Project(" שים לב", "נשלח אלייך מייל עם פרטי ההזמנה");
 
                         //נקודה 9:
                         throw new NotImplementedException("לא ניתן לשנות את ההרשאה לחיוב החשבון");
@@ -154,36 +304,51 @@ namespace BL
             }
         }
 
+       
         //נקודה 10:
         public void Sent_Mail(Order My_Order)
-        {/*
-            string name_hostingunit;
-            MailMessage mail = new MailMessage();
-            mail.Subject = "פרטי הזמנה";
-            foreach (var item in DataSource.My_OrdersList)
-            {
-                if (item.GuestRequestKey == My_Order.GuestRequestKey)
-                {
-                    foreach (var item2 in DataSource.My_GuestRequestsList)
-                    {
-                        if (item2.guest_request_key == My_Order.GuestRequestKey)
-                        {
-                            mail.To.Add(item2.MailAddress); //כתובת המייל של הלקוח
-                            foreach (var item3 in DataSource.My_HostingUnitList)
-                            {
-                                if (item3.hosting_unit_key == My_Order.GuestRequestKey)
-                                {
-                                    mail.From = new MailAddress(item3.Owner.MailAddress);
-                                }
-                                name_hostingunit = item3.HostingUnitName;
-                            }
-                            mail.Body = ":שם לקוח" + item2.PrivateName + "/n" +
+        {
+            GuestRequest temp_GuestRequest = getGuestRequest(FindGuestRequest(My_Order.GuestRequestKey));
+            HostingUnit temp_HostingUnit = getHostingUnit(FindHostingUnit(My_Order.HostingUnitKey));
+
+            string to = temp_GuestRequest.MailAddress; //send mail to the Admin
+
+
+            //to make sure the mail will work on any other computers:
+            string keep = System.Environment.CurrentDirectory;
+            const string removeString = @"\bin\Debug";
+            string read = keep.Remove(keep.IndexOf(removeString), removeString.Length) + @"\pictures\NewMail.html";
+
+            string mailbody = File.ReadAllText(read);
+           
+            mailbody = mailbody.Replace(",שלום רב", " " + temp_GuestRequest.PrivateName + " " + temp_GuestRequest.FamilyName + ": " + "/n" + "הזמנתך הושלמה בהצלחה");
+            mailbody = mailbody.Replace(":פרטי הזמנה", "/n");
+            mailbody = mailbody.Replace(":תאריך כניסה" , " ");
+           
+                              
+            string from = "talyaandefrat@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = ":פרטי הזמנה";
+            message.IsBodyHtml = true;
+            message.BodyEncoding = Encoding.UTF8;
+            message.Body = mailbody;
+
+
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+
+            NetworkCredential basicCredential = new NetworkCredential("talyaandefrat@gmail.com", "te50930225");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = true;
+            client.Credentials = basicCredential;
+        }
+    
+      /* mail.Body = ":שם לקוח" + item2.PrivateName + "/n" +
                                 ":שם משפחה" + item2.FamilyName + ".n" +
                              ":תאריכי הנופש" + item2.EntryDate + "-" + item2.ReleaseDate + "/n" +
                               ":מספר הלילות" + ((item2.ReleaseDate.Day - item2.EntryDate.Day) - 1) + "/n" +
                                ":הרכב" + "  " + ":מספר מבוגרים" + item2.Adults + "  " + ":מספר ילדים" + item2.Children + "/n" +
                                item2.Type + ":" + " " +
-
+                                name_hostingunit = item3.HostingUnitName
                             ":הרכב" + "  " + ":מספר מבוגרים" + item2.Adults + "  " + ":מספר ילדים" + item2.Children + "/n";
              
                             ;
@@ -193,23 +358,10 @@ namespace BL
 
                     }
                 }
-            }
-
-            mail.IsBodyHtml = true;
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.Credentials = new System.Net.NetworkCredential("myGmailEmailAddress@gmail.com", "myGmailPassword");
-            smtp.EnableSsl = true;
-            try
-            {
-                smtp.Send(mail);
-            }
-            catch (Exception ex)
-            {
-                txtMessage.Text = ex.ToString();
             }*/
-        }
 
+           
+       
 
         public void Requirement_update(GuestRequest My_GuestRequest)
         {
@@ -419,8 +571,11 @@ namespace BL
                    into List
                    select List;
         }
-       
 
+        public double Calculation_amount_to_pay(Order My_Order)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

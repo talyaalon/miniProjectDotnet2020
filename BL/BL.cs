@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +9,17 @@ namespace BL
 {
     public class BL : IBL
     {
+        public void AddGuest(MyGuest My_Guest)
+        {
+            throw new NotImplementedException();
+        }
+
         public void addGuestRequest(GuestRequest My_GuestRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddHost(MyHost My_Host)
         {
             throw new NotImplementedException();
         }
@@ -26,7 +34,32 @@ namespace BL
             throw new NotImplementedException();
         }
 
+        public double Calculation_amount_to_pay(Order My_Order)
+        {
+            throw new NotImplementedException();
+        }
+
         public void deleteHostingUnit(long hosting_unit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int FindMyGuest(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int FindMyHost(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MyGuest getMyGuest(int Location_list)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MyHost getMyHost(int Location_list)
         {
             throw new NotImplementedException();
         }

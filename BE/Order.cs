@@ -25,7 +25,11 @@ namespace BE
         public My_enum.Status Status;
         public DateTime CreateDate; //תאריך יציאת ההזמנה 
         public DateTime OrderDate; //תאריך משלוח המייל ללקוח
-        public double Amount_to_pay;//סכום לתשלום
+        //סכום לתשלום
+        public double Amount_to_pay;
+       
+        
+        
         public override string ToString()
         {
             return "OrderKey: " + order + "\n" +

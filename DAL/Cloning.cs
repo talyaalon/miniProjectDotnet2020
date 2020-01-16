@@ -11,7 +11,7 @@ namespace DAL
     {
         public static GuestRequest Clone(this GuestRequest original)
         {
-            GuestRequest target = new GuestRequest(original.Status, original.RegistrationDate, original.PrivateName, original.FamilyName, original.MailAddress,  original.EntryDate, original.ReleaseDate, original.Area, original.SubArea, original.Type, original.Adults, original.Children, original.Pool, original.Jacuzzi, original.Garden, original.ChildrensAttractions);
+            GuestRequest target = new GuestRequest(original.Status, original.RegistrationDate, original.PrivateName, original.FamilyName, original.MailAddress, original.FhoneNumber, original.EntryDate, original.ReleaseDate, original.Area, original.SubArea, original.Type, original.Adults, original.Children, original.Pool, original.Jacuzzi, original.Garden, original.ChildrensAttractions);
             target.guest_request_key = original.guest_request_key;
             return target;
         }
@@ -23,7 +23,7 @@ namespace DAL
         }
         public static Order Clone(this Order original)
         {
-            Order target = new Order(original.HostingUnitKey, original.GuestRequestKey, original.Status, original.OrderDate, original.CreateDate, original.Amount_to_pay);
+            Order target = new Order(original.HostingUnitKey, original.GuestRequestKey, original.Status, original.CreateDate , original.OrderDate,  original.Amount_to_pay);
             target.Order_key = original.Order_key;
             return target;
         }

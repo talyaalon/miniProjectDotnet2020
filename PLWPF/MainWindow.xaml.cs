@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using BL;
 using BE;
 
+
 namespace PLWPF
 {
     /// <summary>
@@ -26,10 +27,33 @@ namespace PLWPF
         public MainWindow()
         {
            // IBL my_BL;
-
-
             InitializeComponent();
-          
+        }
+
+        private void Guest_Click(object sender, RoutedEventArgs e)
+        {
+            Window_Password ad = new Window_Password();
+            ad.ShowDialog();
+            this.Close();
+        }
+
+        private void Host_Click(object sender, RoutedEventArgs e)
+        {
+            Window_Password ad = new Window_Password();
+            ad.ShowDialog();
+            this.Close();
+        }
+
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            Window_Password ad = new Window_Password();
+            ad.ShowDialog();
+            this.Close();
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

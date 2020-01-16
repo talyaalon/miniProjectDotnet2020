@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 
+
 namespace DS
 {
     public class DataSource
@@ -67,7 +68,8 @@ namespace DS
             }
         };
 
-
+        public static List<MyGuest> MyGuest_List = new List<MyGuest>();//רשימה של אורחים
+        public static List<MyHost> MyHost_List = new List<MyHost>();//רשימה של מארחים
     }
     
 }

@@ -40,6 +40,12 @@ namespace BE
                 PrivateName = value;
             }
         }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
+
         public string FamilyName
         {
             get
@@ -68,6 +74,21 @@ namespace BE
                 EmailVerify(MailAddress); //קריאה לפונקצית עזר שנמצאת למטה
             }
         }
+        public string FhoneNumber //מספר טלפון של הלקוח
+        {
+            get { return FhoneNumber; }
+            set       //בדיקת תקינות למספר טלפון
+            {
+                if (value.Length != 10)
+                    throw new ArgumentException("מספר הספרות אינו תואם את הנדרש!");
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if ((value[i] < 48) || (value[i] > 57))//if the char is not between the ascii code of the digits
+                        throw new ArgumentException("יש להכניס רק ספרות!");
+                }
+                FhoneNumber = value;
+            }
+        }
         public My_enum.Status Status { get; set; }
         public DateTime RegistrationDate { get; set; }
         public DateTime EntryDate { get; set; }
@@ -81,10 +102,33 @@ namespace BE
         public My_enum.Areaoptions Jacuzzi { get; set; }
         public My_enum.Areaoptions Garden { get; set; }
         public My_enum.Areaoptions ChildrensAttractions { get; set; }
+        public string Password { get; set; }
+        public string ID_of_Guest //ID
+        {
+            get { return ID_of_Guest; }
+            set //בדיקת תקינות לתעודת זהות 
+            {
+
+                if (value.Length != 9)
+                    throw new ArgumentException("מספר הספרות אינו תואם את הנדרש!");
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if ((value[i] < 48) || (value[i] > 57))//if the char is not between the ascii code of the digits
+                        throw new ArgumentException("יש להכניס רק ספרות!");
+                }
+                ID_of_Guest = value;
+            }
+
+        }
         public override string ToString()
         {
-            return "Status" + Status + "/n" +
-                 "RegistrationDate" + RegistrationDate + "/n" +
+            return "guest_request_key" + guest_request_key +"/n" +
+                "PrivateName " + PrivateName + "/n" +
+                "FamilyName " + FamilyName + "/n" +
+                "MailAddress " + MailAddress + "/n" +
+                "FhoneNumber " + FhoneNumber + "/n" +
+                "Status " + Status + "/n" +
+                 "RegistrationDate " + RegistrationDate + "/n" +
                  "EntryDate" + EntryDate + "/n" +
                  "ReleaseDate" + ReleaseDate + "/n" +
                  "Area" + Area + "/n" +
@@ -105,17 +149,18 @@ namespace BE
         // constractor
         public GuestRequest(My_enum.Status my_status=0, DateTime my_RegistrationDate = new DateTime(),
             string my_PrivateName=" ", string my_FamilyName=" ",
-            string my_MailAddress=" ",DateTime my_EntryDate= new DateTime() ,
+            string my_MailAddress=" ", string my_FhoneNumber= " " , DateTime my_EntryDate= new DateTime() ,
             DateTime my_ReleaseDate= new DateTime(), My_enum.Area my_Area=0, string my_SubArea=" ", 
             My_enum.Type my_Type=0,int my_Adults=0, int my_Children=0, My_enum.Areaoptions my_Pool= 0,
             My_enum.Areaoptions my_Jacuzzi=0, My_enum.Areaoptions my_Garden=0, 
-            My_enum.Areaoptions my_ChildrensAttractions=0) 
+            My_enum.Areaoptions my_ChildrensAttractions=0, string My_Password=" ") 
         {
             Status = my_status; 
             RegistrationDate = my_RegistrationDate;
             PrivateName = my_PrivateName;
             FamilyName= my_FamilyName;
-            MailAddress= my_MailAddress;
+            MailAddress = my_MailAddress;
+            FhoneNumber = my_FhoneNumber;
             EntryDate = my_EntryDate;
             ReleaseDate = my_ReleaseDate;
             Area = my_Area;
@@ -127,6 +172,7 @@ namespace BE
             Jacuzzi = my_Jacuzzi;
             Garden = my_Garden;
             ChildrensAttractions = my_ChildrensAttractions;
+            Password = My_Password;
         }
         
         public static bool EmailVerify(string mailAddress) //בדיקת תקינות למייל 
