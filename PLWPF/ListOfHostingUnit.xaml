@@ -1,0 +1,39 @@
+﻿<Window x:Class="PLWPF.ListOfHostingUnit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="ListOfHostingUnit" Height="450" Width="800">
+
+    <Grid Margin="0,10,-0.4,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="יחידות אירוח יפה.jpg"/>
+        </Grid.Background>
+
+        <DataGrid x:Name="HostingUnitsListDataList" RowHeight="70" IsReadOnly="True"  AutoGenerateColumns="False" SelectionChanged="HostingUnitsListDataList_SelectionChanged" Margin="0,92,-0.267,-0.333" >
+            <DataGrid.OpacityMask>
+                <ImageBrush ImageSource="maldivim1-edit.jpg"/>
+            </DataGrid.OpacityMask>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="HostingUnitKey"  Binding="{Binding hosting_unit_key}" />
+                <DataGridTextColumn Header="HostingUnitName" Binding="{Binding HostingUnitName}"/>
+                <DataGridTextColumn Header="area" Binding="{Binding Area}"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="Jacuzzi" Binding="{Binding Jacuzzi}"/>
+                <DataGridTextColumn Header="Garden" Binding="{Binding Garden}"/>
+                <DataGridTextColumn Header="ChildrensAttractions" Binding="{Binding ChildrensAttractions}"/>
+                <DataGridTextColumn Header="Pool" Binding="{Binding Pool}"/>
+                <DataGridTextColumn Header="NumOfAdults" Binding="{Binding Adults}"/>
+                <DataGridTextColumn Header="PriceForAdult" Binding="{Binding price_Of_Night_To_Adult}"/>
+                <DataGridTextColumn Header="PriceForChild" Binding="{Binding price_Of_Night_To_Child}"/>
+                <DataGridTextColumn Header="NumOfChildren" Binding="{Binding Children}"/>
+                <DataGridTextColumn Header="City" Binding="{Binding SubArea}"/>
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

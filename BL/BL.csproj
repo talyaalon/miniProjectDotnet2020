@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL.cs" />
     <Compile Include="Factory_BL.cs" />
     <Compile Include="IBL.cs" />
     <Compile Include="IBL_imp.cs" />

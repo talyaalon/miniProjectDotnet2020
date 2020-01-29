@@ -19,7 +19,7 @@ using BE;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///Interaction logic for MainWindow.xaml
     /// </summary>
     public  partial class MainWindow : Window
     {
@@ -33,25 +33,25 @@ namespace PLWPF
         private void Guest_Click(object sender, RoutedEventArgs e)
         {
             Window_Password ad = new Window_Password();
-            ad.ShowDialog();
-            this.Close();
+            ad.Show();
+            Close();
         }
 
         private void Host_Click(object sender, RoutedEventArgs e)
         {
             Window_Password ad = new Window_Password();
-            ad.ShowDialog();
-            this.Close();
+            ad.Show();
+            Close();
         }
 
         private void Admin_Click(object sender, RoutedEventArgs e)
         {
             Window_Password ad = new Window_Password();
-            ad.ShowDialog();
-            this.Close();
+            ad.Show();
+            Close();
         }
 
-        private void exit_Click(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

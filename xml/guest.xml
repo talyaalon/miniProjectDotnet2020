@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MyGuest>
+  <myGuest>
+    <FirstName>גאולה</FirstName>
+    <LastName>אלון</LastName>
+    <Id>333333333</Id>
+    <Password>333333333</Password>
+  </myGuest>
+  <myGuest>
+    <FirstName>דוד</FirstName>
+    <LastName>אלון</LastName>
+    <Id>444444444</Id>
+    <Password>444444444</Password>
+  </myGuest>
+</MyGuest>

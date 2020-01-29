@@ -35,7 +35,7 @@ namespace PLWPF
             //MainWindow pUc = new MainWindow();
             //pUc.Show();
 
-            Close();
+            this.Close();
 
 
         }
@@ -48,7 +48,7 @@ namespace PLWPF
 
         private void ok_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
@@ -61,7 +61,12 @@ namespace PLWPF
                 ok_Click(sender, e);
             }
             if (e.Key == Key.Escape)
-                Close();
+               this.Close();
+
+        }
+
+        private void MessageLabel_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

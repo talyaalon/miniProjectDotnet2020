@@ -1,0 +1,139 @@
+﻿<Window x:Class="PLWPF.Update_GeustRequst"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="Update_GeustRequst" Height="450" Width="800">
+    <Border x:Name="MainBorder" Background="white" CornerRadius="20" BorderBrush="#FF0C1F31" BorderThickness="1" Margin="0,0,0.333,-0.333">
+        <Grid>
+            <Image Margin="0,0,0.333,-0.333" Source="הוספת דרישת לקוח (2).jpg" Stretch="Fill" RenderTransformOrigin="1,0.5" Height="419" VerticalAlignment="Bottom">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="הוספת דרישת לקוח (2).jpg" Opacity="0.45"/>
+                </Image.OpacityMask>
+            </Image>
+
+            <Label Content=":עידכון דרישת לקוח" HorizontalAlignment="Left" Margin="485,12,0,0" VerticalAlignment="Top" Width="234" Height="41" FontWeight="Bold" FontSize="24" FontFamily="Cooper Black"/>
+            <Label x:Name="label" Content=":הכנס תעודת זהות לעידכון דרישת הלקוח" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,34,0,0" Width="313" FontSize="16" FontFamily="Stencil" FontWeight="Bold" Height="29" />
+            <TextBox x:Name="idTextBox"  HorizontalAlignment="Left" Height="29" Margin="24,69,0,322.667" VerticalAlignment="Center" Width="228" MaxLength="9" FontFamily="Arial Black" PreviewTextInput="LettersBlock_Textinput" TextDecorations="{x:Null}" FontSize="16" TextChanged="KeyTextBox_TextChanged"/>
+            <Button x:Name="update" Content=" הכנס לעידכון " HorizontalAlignment="Left" VerticalAlignment="Top" Width="118" Margin="71,119,0,0" Click="ButtonUpdateTrainee_Click" Height="38"/>
+
+            <Label Content=":שם פרטי" HorizontalAlignment="Left" Margin="683,61,-11.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <TextBox x:Name="TextBox_of_privat_name" HorizontalAlignment="Left" Height="28" Margin="547,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" PreviewTextInput="JustLetters_Textinput" MaxLength="15" TextChanged="TextBox_TextChanged_1" Text="{Binding PrivateName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":שם משפחה" HorizontalAlignment="Left" Margin="683,108,-11.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <TextBox x:Name="TextBox_of_Family_name"  HorizontalAlignment="Left" Height="28" Margin="547,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" PreviewTextInput="JustLetters_Textinput" MaxLength="15" TextChanged="TextBox_TextChanged_1" Text="{Binding FamilyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":כתובת דוא&quot;ל" HorizontalAlignment="Left" Margin="683,154,-11.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <TextBox x:Name="email" HorizontalAlignment="Left" Height="28" Margin="547,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" LostFocus="Email_LostFocus" TextChanged="TextBox_TextChanged_1" Text="{Binding MailAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":מספר פלאפון" HorizontalAlignment="Left" Margin="679,204,-7.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="43"/>
+
+            <TextBox x:Name="TextBox_of_number_phon" HorizontalAlignment="Left" Height="28" Margin="547,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" PreviewTextInput="LettersBlock_Textinput" MaxLength="10" TextChanged="TextBox_TextChanged_1" Text="{Binding FhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":תאריך כניסה" HorizontalAlignment="Left" Margin="677,248,-5.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <DatePicker x:Name="DatePicker_EntryDate" HorizontalAlignment="Left" Margin="547,256,0,140.667" SelectedDate="{Binding EntryDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" Height="24"/>
+
+            <Label Content=":תאריך יציאה" HorizontalAlignment="Left" Margin="673,292,-1.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <DatePicker x:Name="DatePicker_ReleaseDate" HorizontalAlignment="Left" Margin="547,299,0,97.667" SelectedDate="{Binding ReleaseDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="116" Height="24"/>
+
+            <Label Content=":אזור נופש" HorizontalAlignment="Left" Margin="675,337,-3.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <ComboBox x:Name="ComboBox_of_Area" HorizontalAlignment="Left" Height="22" Margin="547,343,0,55.667" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="114" SelectionChanged="ComboBox_of_Area_SelectionChanged">
+                <ComboBoxItem Content=""/>
+                <ComboBoxItem Content="הכל"/>
+                <ComboBoxItem Content="צפון"/>
+                <ComboBoxItem Content="דרום"/>
+                <ComboBoxItem Content="מרכז"/>
+                <ComboBoxItem Content="ירושלים"/>
+            </ComboBox>
+
+            <Label Content=":עיר" HorizontalAlignment="Left" Margin="679,379,-7.667,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <TextBox x:Name="TextBox_of_number_SubArea" HorizontalAlignment="Left" Height="30" Margin="547,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" PreviewTextInput="JustLetters_Textinput" MaxLength="15" TextChanged="TextBox_TextChanged_1" Text="{Binding SubArea, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":סוג יחידת אירוח" HorizontalAlignment="Left" Margin="410,66,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="144" FontSize="16" Height="28"/>
+            <ComboBox x:Name="ComboBox_of_Type" HorizontalAlignment="Left" Height="23" Margin="283,73,0,324.667" Grid.Row="0" Text="{Binding Type, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" SelectionChanged="ComboBox_of_Area_SelectionChanged">
+                <ComboBoxItem Content=""/>
+                <ComboBoxItem Content="הכל"/>
+                <ComboBoxItem Content="צימר"/>
+                <ComboBoxItem Content="מלון"/>
+                <ComboBoxItem Content="קמפינג"/>
+                <ComboBoxItem Content="אוהל"/>
+            </ComboBox>
+
+            <Label Content=":מספר מבוגרים" HorizontalAlignment="Left" Margin="410,107,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <TextBox x:Name="TextBox_of_Adults" HorizontalAlignment="Left" Height="28" Margin="283,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="LettersBlock_Textinput" MaxLength="3" TextChanged="TextBox_TextChanged_1" Text="{Binding Adults, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":מספר ילדים" HorizontalAlignment="Left" Margin="414,151,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="109" FontSize="16" Height="28"/>
+            <TextBox x:Name="TextBox_of_children" HorizontalAlignment="Left" Height="28" Margin="283,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="LettersBlock_Textinput" MaxLength="3" TextChanged="TextBox_TextChanged_1" Text="{Binding Children, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content=":בריכה" HorizontalAlignment="Left" Margin="418,192,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <ComboBox x:Name="ComboBox_of_pool" HorizontalAlignment="Left" Height="22" Margin="283,198,0,200.667" Grid.Row="0" Text="{Binding Pool, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="114" SelectionChanged="ComboBox_of_Area_SelectionChanged">
+                <ComboBoxItem Content="כן"/>
+                <ComboBoxItem Content="לא "/>
+            </ComboBox>
+
+            <Label Content=":ג'קוזי" HorizontalAlignment="Left" Margin="420,236,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <ComboBox x:Name="ComboBox_of_Jacuzzi" HorizontalAlignment="Left" Height="26" Margin="283,238,0,156.667" Grid.Row="0" Text="{Binding Jacuzzi, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="114" SelectionChanged="ComboBox_of_Area_SelectionChanged">
+                <ComboBoxItem Content="כן"/>
+                <ComboBoxItem Content="לא "/>
+            </ComboBox>
+
+            <Label Content=":גינה" HorizontalAlignment="Left" Margin="424,273,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="122" FontSize="16" Height="28"/>
+            <ComboBox x:Name="ComboBox_of_Garden" HorizontalAlignment="Left" Height="22" Margin="283,279,0,119.667" Grid.Row="0" Text="{Binding Garden, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="114" SelectionChanged="ComboBox_of_Area_SelectionChanged">
+                <ComboBoxItem Content="כן"/>
+                <ComboBoxItem Content="לא "/>
+            </ComboBox>
+
+            <Label Content=":אטרקציות לילדים" HorizontalAlignment="Left" Margin="396,317,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="144" FontSize="16" Height="28"/>
+            <ComboBox x:Name="ComboBox_of_ChildrensAttractions" HorizontalAlignment="Left" Height="22" Margin="285,323,0,75.667" Grid.Row="0" Text="{Binding ChildrensAttractions, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="102" SelectionChanged="ComboBox_of_Area_SelectionChanged">
+                <ComboBoxItem Content="כן"/>
+                <ComboBoxItem Content="לא "/>
+            </ComboBox>
+
+
+            <Button x:Name="button_update_geust_request" Content="אישור" HorizontalAlignment="Left"  Width="129" Margin="10,370,0,0" Height="32" VerticalAlignment="Top" Click="ButtonOk_Click" Background="#FF9BD2FB" FontWeight="Bold" FontSize="20" FontFamily="Segoe UI Black" />
+
+            <Button x:Name="buttonHome" HorizontalAlignment="Left" Height="Auto" Margin="31,308,0,53.667" VerticalAlignment="Stretch" Width="80" Click="ButtonHome_Click" RenderTransformOrigin="1.569,0.468" OpacityMask="{x:Null}">
+                <Image Height="49" Source="מסך בית.png" Stretch="Fill" Width="58">
+                </Image>
+            </Button>
+
+            <Button x:Name="exit"  Click="exit_Click" Margin="740,4,0,373.667" Height="Auto" HorizontalAlignment="Left" Width="43" RenderTransformOrigin="0.5,0.504" >
+                <Button.Background>
+                    <ImageBrush ImageSource="סופי תמונה של איקס  החתוך.png"/>
+                </Button.Background>
+
+
+            </Button>
+        </Grid>
+    </Border>
+</Window>

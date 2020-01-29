@@ -1,0 +1,194 @@
+﻿using BE;
+using BL;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+
+namespace PLWPF
+{
+    /// <summary>
+    /// Interaction logic for Update_GeustRequst.xaml
+    /// </summary>
+    public partial class Update_GeustRequst : Window
+    {
+
+        IBL bl = Factory_BL.getBL();
+        public GuestRequest my_Guest = new GuestRequest();
+
+        public Update_GeustRequst()
+        {
+            InitializeComponent();
+        }
+
+        private void ButtonUpdateTrainee_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                my_Guest = bl.Getid_GiveGuestRequest(idTextBox.Text.ToString());
+                if (my_Guest == null)
+                {
+                    throw new Exception("התעודת זהות שהקשת אינה קיימת ברשימת דרישות לקוח");
+                }
+                if (TextBox_of_privat_name != null)
+                {
+                    my_Guest.firstName = TextBox_of_privat_name.Text.ToString();
+                }
+                if (TextBox_of_Family_name != null)
+                {
+                    my_Guest.FamilyName = TextBox_of_Family_name.Text.ToString();
+                }
+                if (email != null)
+                {
+                    my_Guest.MailAddress = email.Text.ToString();
+                }
+                if (TextBox_of_number_phon != null)
+                {
+                    my_Guest.FhoneNumber = TextBox_of_number_phon.Text.ToString();
+                }
+                if (TextBox_of_number_SubArea != null)
+                {
+                    my_Guest.FhoneNumber = TextBox_of_number_SubArea.Text.ToString();
+                }
+                if (TextBox_of_Adults != null)
+                {
+                    my_Guest.FhoneNumber = TextBox_of_Adults.Text.ToString();
+                }
+                if (TextBox_of_children != null)
+                {
+                    my_Guest.FhoneNumber = TextBox_of_children.Text.ToString();
+                }
+                if (DatePicker_EntryDate.SelectedDate != null)
+                {
+                    my_Guest.EntryDate = DateTime.Parse(DatePicker_EntryDate.Text);
+                }
+                if (DatePicker_ReleaseDate.SelectedDate != null)
+                {
+                    my_Guest.ReleaseDate = DateTime.Parse(DatePicker_ReleaseDate.Text);
+                }
+                if (ComboBox_of_Area.SelectedItem != null)
+                {
+                    my_Guest.Area = CheckEnums.CheckArea(ComboBox_of_Area.SelectionBoxItem.ToString());
+
+                }
+                if (ComboBox_of_Type.SelectedItem != null)
+                {
+                    my_Guest.Type = CheckEnums.CheckType(ComboBox_of_Type.SelectionBoxItem.ToString());
+
+                }
+                if (ComboBox_of_pool.SelectedItem != null)
+                {
+                    my_Guest.Pool = CheckEnums.CheckYes_Or_No(ComboBox_of_pool.SelectionBoxItem.ToString());
+
+
+                }
+                if (ComboBox_of_Jacuzzi.SelectedItem != null)
+                {
+                    my_Guest.Jacuzzi = CheckEnums.CheckYes_Or_No(ComboBox_of_Jacuzzi.SelectionBoxItem.ToString());
+
+
+                }
+                if (ComboBox_of_Garden.SelectedItem != null)
+                {
+                    my_Guest.Garden = CheckEnums.CheckYes_Or_No(ComboBox_of_Garden.SelectionBoxItem.ToString());
+
+                }
+                if (ComboBox_of_ChildrensAttractions.SelectedItem != null)
+                {
+                    my_Guest.ChildrensAttractions = CheckEnums.CheckYes_Or_No(ComboBox_of_ChildrensAttractions.SelectionBoxItem.ToString());
+
+
+                }
+                MessageBox.Show("הוכנס לעידכון, לחץ על 'אישור' אחרי הזנת הפרטים מחדש  ");
+
+
+
+
+            }
+            catch (Exception ms)
+            {
+                MessageBox.Show(ms.Message);
+            }
+        }
+
+        private void ButtonOk_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bl.update_GuestRequest(this.my_Guest);
+                MessageBox_Project x = new MessageBox_Project("!!מעולה ", "העידכון עבר בהצלחה");
+                x.ShowDialog();
+                Close();
+            }
+            catch (ArgumentException exp)
+            {
+                MessageBox.Show(exp.Message);
+
+            }
+
+        }
+        //text input-->only numbers
+        private void LettersBlock_Textinput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        //text input-->only letters 
+        private void JustLetters_Textinput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^a-z+A-Z+א-ת]+").IsMatch(e.Text);
+        }
+
+        private void Email_LostFocus(object sender, RoutedEventArgs e)
+        {
+            e.Handled = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").IsMatch(email.Text);
+            if (e.Handled == false)
+                this.email.BorderBrush = Brushes.Red;
+            else
+                this.email.BorderBrush = Brushes.LightSlateGray;
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_of_Area_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+
+        }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow a = new MainWindow();
+            a.Show();
+            this.Close();
+
+        }
+
+        private void KeyTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
+}

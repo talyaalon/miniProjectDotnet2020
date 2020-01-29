@@ -14,15 +14,15 @@ namespace BE
         public int BranchNumber; //להכניס את רשימת מספרי הסניף של הבנק הנבחר בארץ
         public string BranchAddress;//להכניס לרשימת כתובת בארץ
         public string BranchCity;//להכניס לרשימת ערים בארץ
-        public string BankAccountNumber;
         public override string ToString()
         {
             return "BankNumber: " + BankNumber + "\n" +
                 "BankName: " + BankName + "\n" +
                 "BranchNumber: " + BranchNumber + "\n" +
                 "BranchAddress: " + BranchAddress + "\n" +
-                 "BranchCity: " + BranchCity + "\n" +
-                 "BankAccountNumber: " + BankAccountNumber + "\n";
+                 "BranchCity: " + BranchCity + "\n";
+
+
         }
         //diffult constractor
         public BankBranch()

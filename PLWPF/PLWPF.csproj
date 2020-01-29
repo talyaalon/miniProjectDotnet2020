@@ -55,20 +55,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddHostingUnit.xaml.cs">
+      <DependentUpon>AddHostingUnit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Add_GeustRequst.xaml.cs">
       <DependentUpon>Add_GeustRequst.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin_Window.xaml.cs">
       <DependentUpon>Admin_Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CheckEnums.cs" />
+    <Compile Include="Delete_Hosting_Unit.xaml.cs">
+      <DependentUpon>Delete_Hosting_Unit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPassword.xaml.cs">
       <DependentUpon>ForgotPassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListOfGuest.xaml.cs">
+      <DependentUpon>ListOfGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfHost.xaml.cs">
+      <DependentUpon>ListOfHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfHostingUnit.xaml.cs">
+      <DependentUpon>ListOfHostingUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfHostunitBydateAndDays.xaml.cs">
+      <DependentUpon>ListOfHostunitBydateAndDays.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfOrder.xaml.cs">
+      <DependentUpon>ListOfOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MessageBox_Project.xaml.cs">
       <DependentUpon>MessageBox_Project.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MyAdminWindow.xaml.cs">
-      <DependentUpon>MyAdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyGuestWindow.xaml.cs">
       <DependentUpon>MyGuestWindow.xaml</DependentUpon>
@@ -76,12 +95,28 @@
     <Compile Include="MyHostWindow.xaml.cs">
       <DependentUpon>MyHostWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Registration.xaml.cs">
-      <DependentUpon>Registration.xaml</DependentUpon>
+    <Compile Include="Number_of_orders_By_HostingUnit.xaml.cs">
+      <DependentUpon>Number_of_orders_By_HostingUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registration_Guest.xaml.cs">
+      <DependentUpon>Registration_Guest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registration_Host.xaml.cs">
+      <DependentUpon>Registration_Host.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Update_GeustRequest.xaml.cs">
+      <DependentUpon>Update_GeustRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Hosting_Unit.xaml.cs">
+      <DependentUpon>Update_Hosting_Unit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window_Password.xaml.cs">
       <DependentUpon>Window_Password.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddHostingUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Add_GeustRequst.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,11 +125,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Delete_Hosting_Unit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ForgotPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HostUnitMainWindow.xaml">
+    <Page Include="ListOfGuest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfHostingUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfHostunitBydateAndDays.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,18 +161,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HostUnitMainWindow.xaml.cs">
-      <DependentUpon>HostUnitMainWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MessageBox_Project.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MyAdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,7 +177,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Registration.xaml">
+    <Page Include="Number_of_orders_By_HostingUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registration_Guest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registration_Host.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Update_GeustRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Update_Hosting_Unit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -227,6 +291,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="מסך בית.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LogOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="maldivim1-edit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="יחידות אירוח יפה.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="מרפסת לים.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

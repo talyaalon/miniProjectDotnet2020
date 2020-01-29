@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MyGuestWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="מרפסת לים.jpg"/>
+        </Grid.Background>
+        <Button Content="הוספת דרישת לקוח" HorizontalAlignment="Left" Margin="53,54,0,0" VerticalAlignment="Top" Width="246" Height="112" FontSize="22" FontWeight="Bold" Background="#FF1B7483" Click="Button_Click"/>
+        <Button Content="עידכון דרישת לקוח" HorizontalAlignment="Left" Margin="53,232,0,0" VerticalAlignment="Top" Width="246" Height="109" FontSize="22" FontWeight="Bold" Click="Button_Click_1" Background="#FF1B7483"/>
+
+        <Button x:Name="buttonHome" HorizontalAlignment="Left" Height="Auto" Margin="694,327,0,32.667" VerticalAlignment="Stretch" Width="64" Click="ButtonHome_Click" RenderTransformOrigin="1.569,0.468" OpacityMask="{x:Null}" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="home.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonBack" Content="" HorizontalAlignment="Left" Height="58" Margin="606,327,0,0" VerticalAlignment="Top" Width="64" Click="ButtonBack_Click" RenderTransformOrigin="1.435,-7.198" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="back.png"/>
+            </Button.Background>
+        </Button>
+
     </Grid>
 </Window>

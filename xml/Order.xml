@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Order>
+  <Order_key>10000000</Order_key>
+  <HostingUnitKey>10000000</HostingUnitKey>
+  <GuestRequestKey>10000000</GuestRequestKey>
+  <Status>טרם טופל</Status>
+  <CreateDate>2020,01,24</CreateDate>
+  <OrderDate>2020,01,26</OrderDate>
+  <Amount_to_pay>4122</Amount_to_pay>
+</Order>

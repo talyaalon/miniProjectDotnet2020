@@ -10,9 +10,12 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BE;
+using System.Text.RegularExpressions;
 using BL;
+using BE;
+
 namespace PLWPF
 {
     /// <summary>
@@ -24,6 +27,7 @@ namespace PLWPF
         public Window_Password()
         {
             InitializeComponent();
+
         }
 
 
@@ -36,10 +40,44 @@ namespace PLWPF
 
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
-            Registration re = new Registration();
-            re.ShowDialog();
-            // Close();
+
+
+            try
+            {
+                if (((ComboBoxItem)ComboBox_of_HostOrGuest.SelectedItem) != null) //המשמתש מילא את השדה
+                {
+                    switch (((ComboBoxItem)ComboBox_of_HostOrGuest.SelectedItem).Content.ToString())
+                    {
+                        case " אורח ":
+                            {
+
+
+                                Registration_Guest window = new Registration_Guest();
+                                window.Show();
+                                break;
+                            }
+                        case " מארח ":
+                            {
+                                Registration_Host window = new Registration_Host();
+                                window.Show();
+                                break;
+                            }
+                    }
+                }
+                else
+                {
+                    MessageBox_Project x = new MessageBox_Project(":שִׂים לֵב ", "הינך צריך למלא האם אתה אורח/מארח ");
+                    x.ShowDialog();
+                }
+            }
+            catch (ArgumentException exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+
         }
+
+    
 
         private void Guest_Window(MyGuest t)
         {
@@ -47,14 +85,7 @@ namespace PLWPF
             guestWindow.Show();
             Close();
         }
-
-        private void Host_Window(MyHost t)
-        {
-            MyHostWindow hostWindow = new MyHostWindow();
-            hostWindow.Show();
-            Close();
-        }
-
+        
         private void Sumbit_Click(object sender, RoutedEventArgs e)
         {
             if ((IDFill.Text == "207590225" || IDFill.Text == "318795093") && PasswordFill.Text == "111111111")//if it is the admin,efrat or talya
@@ -66,32 +97,50 @@ namespace PLWPF
             }
             try
             {
-                if (((ComboBoxItem)ComboBox_of_HostOrGuest.SelectedItem).Content.ToString() != "")
+                if (((ComboBoxItem)ComboBox_of_HostOrGuest.SelectedItem) != null)
                 {
 
                     switch (((ComboBoxItem)ComboBox_of_HostOrGuest.SelectedItem).Content.ToString())
                     {
-                        case "אורח":
+                        case " אורח ":
                             {
                                 MyGuest temp = bl.getMyGuest(bl.FindMyGuest(IDFill.Text));
                                 if (temp.Password != PasswordFill.Text)
                                 {
-                                    throw new NotImplementedException("הסיסמא אינה נכונה");
+                                    MessageBox_Project x = new MessageBox_Project(":שִׂים לֵב ", "סיסמתך אינה נכונה");
+                                    x.ShowDialog();
+                                  
                                 }
                                 Guest_Window(temp);
                                 break;
                             }
-                        case "מארח":
+                        case " מארח ":
                             {
                                 MyHost temp = bl.getMyHost(bl.FindMyHost(IDFill.Text));
-                                if (temp.Password != PasswordFill.Text)
+                                if (temp.Password_host != PasswordFill.Text)
                                 {
-                                    throw new NotImplementedException("הסיסמא אינה נכונה");
+                                    MessageBox_Project x = new MessageBox_Project(":שִׂים לֵב ", "סיסמתך אינה נכונה אנא נסה שוב");
+                                    x.ShowDialog();
+                                  
                                 }
-                                Host_Window(temp);
+                                else
+                                {
+                                    MyHostWindow hostWindow = new MyHostWindow(temp);
+                                    hostWindow.Show();
+                                    Close();
+                                }
+
                                 break;
                             }
                     }
+                }
+                else
+                {
+                    MessageBox_Project x = new MessageBox_Project(":שִׂים לֵב ", "לא מילאת את כל הפרטים " + "\n" + "אנא מלא שוב את כל הפרטים");
+                    x.ShowDialog();
+                   
+                    Window_Password window = new Window_Password();
+                    window.Show();
                 }
             }
             catch (ArgumentException exp)
@@ -100,7 +149,7 @@ namespace PLWPF
             }
         }
 
-        private void exit_Click(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -108,9 +157,29 @@ namespace PLWPF
 
         private void ForgetPasswordLabel_Click(object sender, RoutedEventArgs e)
         {
-            ForgotPassword fe = new ForgotPassword(IDFill.Text);
+            ForgotPassword fe = new ForgotPassword();
             fe.ShowDialog();
             this.Close();
+        }
+
+    
+
+    //text input-->only numbers
+    private void LettersBlock_Textinput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+    }
+
+
+        //text input-->only letters and numbers
+        private void LettersAndNumbersBlock_Textinput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^a-z+A-Z+0-9]+").IsMatch(e.Text);
+        }
+
+        private void IDFill_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
         private void choiceCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -118,5 +187,11 @@ namespace PLWPF
 
         }
 
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow a = new MainWindow();
+            a.Show();
+            this.Close();
+        }
     }
 }

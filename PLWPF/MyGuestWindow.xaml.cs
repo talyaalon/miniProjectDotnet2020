@@ -23,5 +23,34 @@ namespace PLWPF
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Add_GeustRequst ad = new Add_GeustRequst();
+            ad.Show();
+            this.Close();
+           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Update_GeustRequst up = new Update_GeustRequst();
+            up.Show();
+            this.Close();
+        }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow a = new MainWindow();
+            a.Show();
+            this.Close();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            Window_Password a = new Window_Password();
+            a.Show();
+            this.Close();
+        }
     }
 }

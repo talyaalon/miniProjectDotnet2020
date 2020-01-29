@@ -42,8 +42,8 @@ namespace BE
         }
         //diffult constractor:
         public Order()
-        { 
-
+        {
+            Order_key = order;
         }
         //constractor:
         public Order(long  My_HostingUnitKey,long  my_GuestRequestKey, My_enum.Status my_Status=0,

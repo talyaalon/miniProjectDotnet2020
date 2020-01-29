@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HostingUnit>
+  <hostingUnit>
+    <hosting_unit_key>10000001</hosting_unit_key>
+    <Owner>
+      <FirstName_host>אליה</FirstName_host>
+      <LastName_host>אלון</LastName_host>
+      <Id_host>111111111</Id_host>
+      <Password_host>222222222</Password_host>
+      <FhoneNumber>11111111</FhoneNumber>
+      <MailAddress>t0505154143@gmail.com</MailAddress>
+      <BankAccountNumber>345678</BankAccountNumber>
+      <CollectionClearance>כן</CollectionClearance>
+      <BankAccuont>
+        <BankName>בנק פועלים</BankName>
+        <BankNumber>12</BankNumber>
+        <BranchAddress>גיבעתי 5</BranchAddress>
+        <BranchCity>ירושלים</BranchCity>
+        <BranchNumber>123</BranchNumber>
+      </BankAccuont>
+    </Owner>
+    <HostingUnitName>שמיים כחולים</HostingUnitName>
+    <Diary>falsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalse</Diary>
+    <price_Of_Night_To_Adult>0</price_Of_Night_To_Adult>
+    <price_Of_Night_To_Child>0</price_Of_Night_To_Child>
+    <Type>צימר</Type>
+    <Adults>6</Adults>
+    <Children>8</Children>
+    <Area>צפון</Area>
+    <SubArea>טבריה</SubArea>
+    <ChildrensAttractions>לא</ChildrensAttractions>
+    <Garden>לא</Garden>
+    <Pool>לא</Pool>
+    <Jacuzzi>לא</Jacuzzi>
+  </hostingUnit>
+  </HostingUnit>

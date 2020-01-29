@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
         Title="MyHostWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,4,0.333,-4.333">
+        <Grid.Background>
+            <ImageBrush ImageSource="מרפסת לים.jpg"/>
+        </Grid.Background>
+        <Button Content="הוספת יחידת אירוח" HorizontalAlignment="Left" Margin="46,44,0,0" VerticalAlignment="Top" Width="214" Height="77" FontWeight="Bold" FontSize="18" Click="Button_Click_add" Background="#FF1B7483"/>
+        <Button Content="מחיקת יחידת אירוח" HorizontalAlignment="Left" Margin="46,144,0,0" VerticalAlignment="Top" Width="214" Height="73" FontSize="18" FontWeight="Bold" Click="Button_Click_delete" Background="#FF1B7483"/>
+        <Button Content="עידכון יחידת אירוח" HorizontalAlignment="Left" Margin="46,240,0,0" VerticalAlignment="Top" Width="214" Height="75" FontSize="18" FontWeight="Bold" Click="Button_Click_update" Background="#FF1B7483"/>
+        <Button x:Name="buttonHome" HorizontalAlignment="Left" Height="Auto" Margin="694,327,0,32.667" VerticalAlignment="Stretch" Width="64" Click="ButtonHome_Click" RenderTransformOrigin="1.569,0.468" OpacityMask="{x:Null}" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="home.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonBack" Content="" HorizontalAlignment="Left" Height="58" Margin="606,327,0,0" VerticalAlignment="Top" Width="64" Click="ButtonBack_Click" RenderTransformOrigin="1.435,-7.198" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="back.png"/>
+            </Button.Background>
+        </Button>
+
     </Grid>
 </Window>

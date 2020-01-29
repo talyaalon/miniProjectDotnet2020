@@ -8,10 +8,11 @@ namespace BE
 {
     public class MyGuest
     {
-       public string FirstName { get; set; }
-       public string LastName { get; set; }
-       public string Id { get; set; }
-       public string Password { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Id { get; set; }
+        public string Password { get; set; }
+        public DateTime RegistrationDate = DateTime.Now;
 
         public override string ToString()
         {
@@ -26,14 +27,15 @@ namespace BE
 
         }
         //constractor:
-        public MyGuest(string My_FirstName=" ", string My_LastName = " ", string My_Id = " ", string My_password = " ")
-          
+        public MyGuest(string My_FirstName = " ", string My_LastName = " ", string My_Id = " ", string My_password = " ")
+
         {
             FirstName = My_FirstName;
             LastName = My_LastName;
             Id = My_Id;
             Password = My_password;
-        }
 
+
+        }
     }
 }

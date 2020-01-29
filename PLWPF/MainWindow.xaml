@@ -32,7 +32,7 @@
                 <Button x:Name="Guest" Content="אורח" Cursor="Hand" FontSize="24" Margin="53,65,157.667,302" Height="Auto" Click="Guest_Click" RenderTransformOrigin="0.5,0.5" Background="#FFDBA7B1" FontFamily="Segoe UI Black" FontWeight="Bold"   />
                 <Button x:Name="Host" Content="מארח " Cursor="Hand" FontSize="24" Margin="53,187,157.667,180" Height="Auto" Click="Host_Click" RenderTransformOrigin="0.5,0.5" Background="#FFDBA7B1" FontFamily="Segoe UI Black" FontWeight="Bold"   />
                 <Button x:Name="Admin" Content="מנהל האתר" Cursor="Hand" FontSize="24" Margin="53,310,157.667,57" Height="Auto" Click="Admin_Click" RenderTransformOrigin="0.5,0.5" Background="#FFDBA7B1" FontFamily="Segoe UI Black" FontWeight="Bold"   />
-                <Button x:Name="exit"  Click="exit_Click" Margin="327.333,10,-56,370" Height="Auto" HorizontalAlignment="Left" Width="56" RenderTransformOrigin="0.5,0.5" Grid.Column="1" >
+                <Button x:Name="exit"  Click="Exit_Click" Margin="327.333,10,-56,370" Height="Auto" HorizontalAlignment="Left" Width="56" RenderTransformOrigin="0.5,0.5" Grid.Column="1" >
                     <Button.Background>
                         <ImageBrush ImageSource="סופי תמונה של איקס  החתוך.png"/>
                     </Button.Background>
