@@ -81,7 +81,7 @@ namespace DAL
             XElement Garden = new XElement("Garden", guestRequest.Garden);
             XElement ChildrensAttractions = new XElement("ChildrensAttractions", guestRequest.ChildrensAttractions);
             XElement ID_of_Guest = new XElement("ID_of_Guest", guestRequest.ID_of_Guest);
-            XElement GuestRequest = new XElement("GuestRequest", guest_request_key, firstName, lastName, MailAddress, FhoneNumber, Status,
+            XElement GuestRequest = new XElement("guestRequest", guest_request_key, firstName, lastName, MailAddress, FhoneNumber, Status,
                 RegistrationDate, EntryDate, ReleaseDate, Area, SubArea, Type, Adults,
                 Children, Pool, Jacuzzi, Garden, ChildrensAttractions, ID_of_Guest);
             xmlElement.Add(GuestRequest);
@@ -172,7 +172,7 @@ namespace DAL
             XElement Id = new XElement("Id", myGuest.Id);
             XElement Password = new XElement("Password", myGuest.Password);
             XElement RegistrationDate = new XElement("RegistrationDate", myGuest.RegistrationDate);
-            XElement guest = new XElement("MyGuest", FirstName, LastName, Id, Password, RegistrationDate);
+            XElement guest = new XElement("myGuest", FirstName, LastName, Id, Password, RegistrationDate);
             xmlElement.Add(guest);
             xmlElement.Save(Path + "guest.xml");
 
@@ -274,7 +274,7 @@ namespace DAL
                                                                                new XElement("BranchCity", myHost.BankAccuont.BranchCity),
                                                                                new XElement("BranchNumber", myHost.BankAccuont.BranchNumber));
             XElement CollectionClearance = new XElement("CollectionClearance", myHost.CollectionClearance);
-            XElement host = new XElement("MyHost", FirstName_host, LastName_host, Id_host, Password_host,
+            XElement host = new XElement("myHost", FirstName_host, LastName_host, Id_host, Password_host,
                 FhoneNumber, MailAddress, BankAccountNumber, BankAccuont, CollectionClearance);
             xmlElement.Add(host);
             xmlElement.Save(Path + "hosts.xml");

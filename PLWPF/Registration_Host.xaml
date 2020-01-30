@@ -72,7 +72,7 @@
                    
 
                     <Label x:Name="BankAccountNumberLabel" Content=":מספר חשבון בנק " FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,103,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                <TextBox x:Name="BankAccountNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="6" FontSize="14"  Text="{Binding BankAccountNumber , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BankAccountNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="6" FontSize="14"  Text="{Binding BankNumber , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
@@ -80,7 +80,7 @@
                     
 
                     <Label x:Name="BankNameLabel" Content=":שם הבנק" FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,143,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                <TextBox x:Name="BankNameFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,143,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BankNameFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,143,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankName , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
@@ -88,7 +88,7 @@
                    
 
                     <Label x:Name="BankNumberLabel" Content=": מספר סניף " FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,182,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                <TextBox x:Name="BankNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="3" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BankNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="3" FontSize="14" Text="{Binding BranchNumber , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
@@ -96,7 +96,7 @@
 
 
                 <Label x:Name="BranchCityLabel" Content=":עיר הסניף" FontSize="14" HorizontalAlignment="Right" Margin="0,220,383.001,166.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BranchCityFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,261,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BranchCityFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,261,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BranchCity , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
@@ -104,7 +104,7 @@
                     
 
                     <Label x:Name="BranchAddressLabel" Content=":כתובת הסניף" FontSize="14" HorizontalAlignment="Right" Margin="0,263,383.001,126.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BranchAddressFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="78,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BranchAddressFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="78,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BranchAddress , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>

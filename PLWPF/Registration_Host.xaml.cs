@@ -34,17 +34,20 @@ namespace PLWPF
         }
 
         private void Sumbit_Click(object sender, RoutedEventArgs e)
-        {
+         {
             This_Host.FhoneNumber = FhoneFill.Text.ToString();
             This_Host.MailAddress = email.Text.ToString();
             This_Host.BankAccountNumber = Convert.ToInt32(BankAccountNumberFill.Text);
-            
-            This_Host.BankAccuont.BankName = BankNameFill.Text.ToString();
-            This_Host.BankAccuont.BankNumber = int.Parse(BankAccountNumberFill.Text); // מספר חשבון בנק 
-            This_Host.BankAccuont.BranchNumber= int.Parse(BankNumberFill.Text);
-            This_Host.BankAccuont.BranchAddress = BranchAddressFill.Text.ToString();
-            This_Host.BankAccuont.BranchCity = BranchCityFill.Text.ToString();
             This_Host.CollectionClearance = CheckEnums.CheckYes_Or_No(ComboBox_of_YesOrNo.SelectionBoxItem.ToString());
+
+            BankBranch BankAccuont = new BankBranch();
+            BankAccuont.BankName = BankNameFill.Text.ToString();
+            BankAccuont.BankNumber = int.Parse(BankAccountNumberFill.Text); // מספר חשבון בנק 
+            BankAccuont.BranchNumber= int.Parse(BankNumberFill.Text); //מספר סניף
+            BankAccuont.BranchAddress = BranchAddressFill.Text.ToString();
+            BankAccuont.BranchCity = BranchCityFill.Text.ToString();
+
+            This_Host.BankAccuont = BankAccuont;
 
             bl.AddHost(this.This_Host);
             

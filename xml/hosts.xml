@@ -17,22 +17,5 @@
       <BranchCity>מעלה אדומים</BranchCity>
     </BankAccuont>
   </myHost>
-  <myHost>
-    <FirstName_host>אליה</FirstName_host>
-    <LastName_host>אלון</LastName_host>
-    <Id_host>111111111</Id_host>
-    <Password_host>222222222</Password_host>
-    <FhoneNumber>11111111</FhoneNumber>
-    <MailAddress>t0505154143@gmail.com</MailAddress>
-    <BankAccountNumber>345678</BankAccountNumber>
-    <CollectionClearance>לא</CollectionClearance>
-    <BankAccuont>
-      <BankNumber>12</BankNumber>
-      <BankName>בנק פועלים</BankName>
-      <BranchNumber>123</BranchNumber>
-      <BranchAddress>גיבעתי 5</BranchAddress>
-      <BranchCity>ירושלים</BranchCity>
-    </BankAccuont>
-  </myHost>
+  
 </MyHost>
- 
