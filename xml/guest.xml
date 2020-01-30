@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <MyGuest>
   <myGuest>
     <FirstName>גאולה</FirstName>
@@ -12,4 +12,4 @@
     <Id>444444444</Id>
     <Password>444444444</Password>
   </myGuest>
-</MyGuest>
+  </MyGuest>

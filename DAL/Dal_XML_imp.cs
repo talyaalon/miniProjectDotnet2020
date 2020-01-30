@@ -16,31 +16,46 @@ namespace DAL
         {
 
         }
-        public static bool[,] GetDiary(string strDiary)
+        public static bool[,] GetDiary(XElement xElement)
         {
-            bool[,] diary = new bool[12, 31];
-            int index = 0;
-            string[] strArr = strDiary.Split(',');
-            for (int i = 0; i < 12; i++)
-                for (int j = 0; j < 31; j++)
+            bool[,] Diary = new bool[12, 31];
+            XElement xmlDiary = xElement;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                for (int k = 1; k <= 31; k++)
                 {
-                    if (int.Parse(strArr[index++]) == 1)
-                        diary[i, j] = true;
-                    else diary[i, j] = false;
+
+                    var Day = (from diary in xmlDiary.Elements()
+                               let month = diary.Element("M" + i.ToString())                              
+                               let day = month.Element("day" + k.ToString())
+                               select day.Value).ToList()[0];
+                    Diary[i - 1, k - 1] = bool.Parse(Day);
                 }
-            return diary;
+
+            }
+
+            return Diary;
         }
-        public static string SetDiary(BE.HostingUnit hostingUnit)
+        public static XElement SetDiary(BE.HostingUnit hostingUnit)
         {
-            string result = "";
-            for (int i = 0; i < 12; i++)
-                for (int j = 0; j < 31; j++)
+            List<XElement> xElementsMonth = new List<XElement>();
+            List<XElement> days = new List<XElement>();
+
+            
+            for (int i = 1; i <= 12; i++)
+            {
+                for (int k = 1; k <= 31; k++)
                 {
-                    if (hostingUnit.Diary[i, j] == true)
-                        result += 1 + ",";
-                    else result += 0 + ",";
+                    days.Add(new XElement("day" + k.ToString(), hostingUnit.Diary[i - 1, k - 1].ToString()));
                 }
-            return result;
+                xElementsMonth.Add(new XElement("M" + i.ToString(), days));
+                days.Clear();
+            }
+            XElement Diary = new XElement("Diary", xElementsMonth);
+
+            return Diary;
+
         }
 
 
@@ -395,27 +410,27 @@ namespace DAL
                                       {
                                           Owner = new BE.MyHost()
                                           {
-                                              FirstName_host = HostingUnit.Element("FirstName_host").Value,
-                                              LastName_host = HostingUnit.Element("LastName_host").Value,
-                                              Id_host = HostingUnit.Element("Id_host").Value,
-                                              Password_host = HostingUnit.Element("Password_host").Value,
-                                              FhoneNumber = HostingUnit.Element("FhoneNumber").Value,
-                                              MailAddress = HostingUnit.Element("MailAddress").Value,
-                                              BankAccountNumber = int.Parse(HostingUnit.Element("BankAccountNumber").Value),
-                                              CollectionClearance = (BE.My_enum.Yes_Or_No)Enum.Parse(typeof(BE.My_enum.Yes_Or_No), HostingUnit.Element("CollectionClearance").Value),
-                                              //(from MyHost in MyHosts.Elements() select MyHost).ToList()[0].Element("BankAccuont").Element("BankName").Value
+                                              FirstName_host = HostingUnit.Element("Owner").Element("FirstName").Value,
+                                              LastName_host = HostingUnit.Element("Owner").Element("LastName_host").Value,
+                                              Id_host = HostingUnit.Element("Owner").Element("Id_host").Value,
+                                              Password_host = HostingUnit.Element("Owner").Element("Password_host").Value,
+                                              FhoneNumber = HostingUnit.Element("Owner").Element("FhoneNumber").Value,
+                                              MailAddress = HostingUnit.Element("Owner").Element("MailAddress").Value,
+                                              BankAccountNumber = int.Parse(HostingUnit.Element("Owner").Element("BankAccountNumber").Value),
+                                              CollectionClearance = (BE.My_enum.Yes_Or_No)Enum.Parse(typeof(BE.My_enum.Yes_Or_No), HostingUnit.Element("Owner").Element("CollectionClearance").Value),
                                               BankAccuont = new BE.BankBranch()
                                               {
-                                                  BankNumber = int.Parse(HostingUnit.Element("BankAccuont").Element("BankNumber").Value),
-                                                  BankName = HostingUnit.Element("BankAccuont").Element("BankName").Value,
-                                                  BranchNumber = int.Parse(HostingUnit.Element("BankAccuont").Element("BranchNumber").Value),
-                                                  BranchAddress = HostingUnit.Element("BankAccuont").Element("BranchAddress").Value,
-                                                  BranchCity = HostingUnit.Element("BankAccuont").Element("BranchCity").Value
+                                                  BankNumber = int.Parse(HostingUnit.Element("Owner").Element("BankAccuont").Element("BankNumber").Value),
+                                                  BankName = HostingUnit.Element("Owner").Element("BankAccuont").Element("BankName").Value,
+                                                  BranchNumber = int.Parse(HostingUnit.Element("Owner").Element("BankAccuont").Element("BranchNumber").Value),
+                                                  BranchAddress = HostingUnit.Element("Owner").Element("BankAccuont").Element("BranchAddress").Value,
+                                                  BranchCity = HostingUnit.Element("Owner").Element("BankAccuont").Element("BranchCity").Value
                                               },
+
                                           },
-                                          
+
                                           hosting_unit_key = long.Parse(HostingUnit.Element("hosting_unit_key").Value),
-                                          Diary = GetDiary(HostingUnit.Element("Diary").Value),
+                                          Diary = GetDiary(HostingUnit.Element("Diary")),
                                           HostingUnitName = HostingUnit.Element("HostingUnitName").Value,
                                           price_Of_Night_To_Adult = int.Parse(HostingUnit.Element("price_Of_Night_To_Adult").Value),
                                           price_Of_Night_To_Child = int.Parse(HostingUnit.Element("price_Of_Night_To_Child").Value),
@@ -433,7 +448,7 @@ namespace DAL
 
                 return AllHostingUnit.ToList();
             }
-            catch
+            catch(Exception ex)
             {
                 return null;
             }

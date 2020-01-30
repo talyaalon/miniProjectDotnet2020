@@ -65,18 +65,14 @@
                    
 
                     <Label x:Name="MailLabel"  FontSize="14" Content=":כתובת מייל" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="134" Foreground="#FF0C1F31" FontWeight="Bold" Margin="648,302,0,0"/>
-                    <TextBox x:Name="MailFill"  BorderBrush="Black" Foreground="Black" BorderThickness="2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" PreviewTextInput="LettersAndNumbersBlock_Textinput" VerticalAlignment="Top" Width="192" MaxLength="9" FontSize="14" Margin="450,301,0,0" Text="{Binding MailAddress , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
-                        <TextBox.Background>
-                            <SolidColorBrush Color="White" Opacity="0"/>
-                        </TextBox.Background>
-                    </TextBox>
-                 
+                <TextBox x:Name="email" Background="Transparent" BorderBrush="Black"  Foreground="Black"  BorderThickness="2"   Height="Auto"  Width="Auto" LostFocus="Email_LostFocus"  Margin="450,306,153.001,90.001" TextChanged="Email_TextChanged" />
 
-                    <Label x:Name="Bank_details" Content=":פרטי הבנק" FontSize="18" HorizontalAlignment="Right" Height="35" Margin="0,60,458.6,0" VerticalAlignment="Top" Width="110" Foreground="#FF0C1F31" FontWeight="Bold"/>
+
+                <Label x:Name="Bank_details" Content=":פרטי הבנק" FontSize="18" HorizontalAlignment="Right" Height="35" Margin="0,60,458.6,0" VerticalAlignment="Top" Width="110" Foreground="#FF0C1F31" FontWeight="Bold"/>
                    
 
                     <Label x:Name="BankAccountNumberLabel" Content=":מספר חשבון בנק " FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,103,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BankAccountNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccountNumber , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BankAccountNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="6" FontSize="14"  Text="{Binding BankAccountNumber , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
@@ -84,47 +80,39 @@
                     
 
                     <Label x:Name="BankNameLabel" Content=":שם הבנק" FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,143,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BankNameFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,143,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <TextBox x:Name="BankNameFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,143,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
                    
 
-                    <Label x:Name="BankNumberLabel" Content=":מספר בנק " FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,182,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BankNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                    <Label x:Name="BankNumberLabel" Content=": מספר סניף " FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,182,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
+                <TextBox x:Name="BankNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="LettersBlock_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="3" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
-                   
 
-                    <Label x:Name="BranchNumberLabel" Content=":מספר סניף הבנק" FontSize="14" HorizontalAlignment="Right" Height="29" Margin="0,220,383.6,0" VerticalAlignment="Top" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BranchNumberFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
-                        <TextBox.Background>
-                            <SolidColorBrush Color="White" Opacity="0"/>
-                        </TextBox.Background>
-                    </TextBox>
-                 
 
-                    <Label x:Name="BranchCityLabel" Content=":עיר הסניף" FontSize="14" HorizontalAlignment="Right" Margin="0,261,383.001,125.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BranchCityFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,298,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                <Label x:Name="BranchCityLabel" Content=":עיר הסניף" FontSize="14" HorizontalAlignment="Right" Margin="0,220,383.001,166.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
+                    <TextBox x:Name="BranchCityFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,261,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
                     
 
-                    <Label x:Name="BranchAddressLabel" Content=":כתובת הסניף" FontSize="14" HorizontalAlignment="Right" Margin="0,299,383.001,90.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <TextBox x:Name="BranchAddressFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="77,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                    <Label x:Name="BranchAddressLabel" Content=":כתובת הסניף" FontSize="14" HorizontalAlignment="Right" Margin="0,263,383.001,126.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
+                    <TextBox x:Name="BranchAddressFill" BorderBrush="Black" Foreground="Black" BorderThickness="2" PreviewTextInput="JustLetters_Textinput" HorizontalAlignment="Left" Height="30" Margin="78,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" MaxLength="15" FontSize="14" Text="{Binding BankAccuont , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
                    
 
-                    <Label x:Name="CollectionClearanceLabel" Content=":אישור גביה מהבנק" FontSize="14" HorizontalAlignment="Right" Margin="0,334,383.001,53.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
-                    <ComboBox x:Name= "ComboBox_of_YesOrNo" HorizontalAlignment="Left" Margin="149,339,0,0" VerticalAlignment="Top" Width="120"  IsEnabled="True" SelectionChanged="choiceCombo_SelectionChanged" Text="{Binding CollectionClearance , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
+                    <Label x:Name="CollectionClearanceLabel" Content=":אישור גביה מהבנק" FontSize="14" HorizontalAlignment="Right" Margin="0,297,383.001,90.001" Width="137" Foreground="#FF0C1F31" FontWeight="Bold" RenderTransformOrigin="0.706,1.092"/>
+                    <ComboBox x:Name= "ComboBox_of_YesOrNo" HorizontalAlignment="Left" Margin="149,306,0,0" VerticalAlignment="Top" Width="120"  IsEnabled="True" SelectionChanged="choiceCombo_SelectionChanged" Text="{Binding CollectionClearance , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" >
                         <ComboBoxItem Content=" כן " />
                         <ComboBoxItem Content=" לא "/>
                     </ComboBox>

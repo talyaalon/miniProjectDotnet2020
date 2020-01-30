@@ -36,20 +36,22 @@ namespace PLWPF
         private void Sumbit_Click(object sender, RoutedEventArgs e)
         {
             This_Host.FhoneNumber = FhoneFill.Text.ToString();
-            This_Host.MailAddress = MailFill.Text.ToString();
+            This_Host.MailAddress = email.Text.ToString();
             This_Host.BankAccountNumber = Convert.ToInt32(BankAccountNumberFill.Text);
+            
             This_Host.BankAccuont.BankName = BankNameFill.Text.ToString();
-            This_Host.BankAccuont.BankNumber = int.Parse(BankNumberFill.Text);
+            This_Host.BankAccuont.BankNumber = int.Parse(BankAccountNumberFill.Text); // מספר חשבון בנק 
+            This_Host.BankAccuont.BranchNumber= int.Parse(BankNumberFill.Text);
             This_Host.BankAccuont.BranchAddress = BranchAddressFill.Text.ToString();
             This_Host.BankAccuont.BranchCity = BranchCityFill.Text.ToString();
-            This_Host.BankAccuont.BranchNumber = int.Parse(BranchNumberFill.Text);
             This_Host.CollectionClearance = CheckEnums.CheckYes_Or_No(ComboBox_of_YesOrNo.SelectionBoxItem.ToString());
 
             bl.AddHost(this.This_Host);
-            Close();
+            
 
             Window_Password window = new Window_Password();
             window.Show();
+            this.Close();
         }
    
             private void Exit_Click(object sender, RoutedEventArgs e)
@@ -76,6 +78,16 @@ namespace PLWPF
         {
             e.Handled = new Regex("[^a-z+A-Z+0-9]+").IsMatch(e.Text);
         }
+        private void Email_LostFocus(object sender, RoutedEventArgs e)
+        {
+            e.Handled = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").IsMatch(email.Text);
+            if (e.Handled == false)
+                this.email.BorderBrush = Brushes.Red;
+            else
+                this.email.BorderBrush = Brushes.LightSlateGray;
+        }
+
+
 
         private void IDFill_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -89,6 +101,11 @@ namespace PLWPF
         }
 
         private void choiceCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Email_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
