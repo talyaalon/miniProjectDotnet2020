@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BL;
 
 namespace PLWPF
 {
@@ -19,9 +20,14 @@ namespace PLWPF
     /// </summary>
     public partial class ListOfOrder : Window
     {
+        IBL bl;
         public ListOfOrder()
         {
+            
             InitializeComponent();
+            bl = BL.Factory_BL.getBL();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.OrdersDataList.ItemsSource = bl.GetOrderList();
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)

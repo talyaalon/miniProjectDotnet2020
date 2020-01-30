@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         Title="ListOfOrder" Height="450" Width="800">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="יחידות אירוח יפה.jpg"/>
-        </Grid.Background>
         <Button x:Name="buttonHome" HorizontalAlignment="Left" Height="Auto" Margin="694,327,0,32.667" VerticalAlignment="Stretch" Width="64" Click="ButtonHome_Click" RenderTransformOrigin="1.569,0.468" OpacityMask="{x:Null}" Grid.ColumnSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="home.png"/>
@@ -20,7 +17,21 @@
                 <ImageBrush ImageSource="back.png"/>
             </Button.Background>
         </Button>
+        <DataGrid x:Name="OrdersDataList" RowHeight="70" IsReadOnly="True"  AutoGenerateColumns="False" Margin="0,0,0.333,138.667" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Status"  Binding="{Binding status_Order}" />
+                <DataGridTextColumn Header="HostingUnitKey" Binding="{Binding HostingUnitKey}"/>
+                <DataGridTextColumn Header="GuestRequestKey" Binding="{Binding GuestRequestKey}"/>
+                <DataGridTextColumn Header="OrderKey" Binding="{Binding OrderKey}"/>
+                <DataGridTextColumn Header="OrderDate" Binding="{Binding OrderDate}"/>
+                <DataGridTextColumn Header="CreateDate" Binding="{Binding CreateDate}"/>
 
+            </DataGrid.Columns>
+        </DataGrid>
 
+        <Grid.Background>
+            <ImageBrush ImageSource="יחידות אירוח יפה.jpg"/>
+        </Grid.Background>
+    
     </Grid>
 </Window>

@@ -404,6 +404,10 @@ namespace BL
             }
             return count;
         }
+        public List<Order> GetOrderList()
+        {
+            return Dal_XML_imp.GetOrderFromXml();
+        }
         public List<GuestRequest> use_delegate(some_delegate delegete)
         {
             List<GuestRequest> returnList = new List<GuestRequest>();

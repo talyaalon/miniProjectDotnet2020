@@ -12,7 +12,7 @@
             <ImageBrush ImageSource="יחידות אירוח יפה.jpg"/>
         </Grid.Background>
 
-        <DataGrid x:Name="HostingUnitsListDataList" RowHeight="70" IsReadOnly="True"  AutoGenerateColumns="False" SelectionChanged="HostingUnitsListDataList_SelectionChanged" Margin="0,92,-0.267,-0.333" >
+        <DataGrid x:Name="HostingUnitsListDataList" RowHeight="70" IsReadOnly="True"  AutoGenerateColumns="False" SelectionChanged="HostingUnitsListDataList_SelectionChanged" Margin="0,0,-0.267,91.667" >
             <DataGrid.OpacityMask>
                 <ImageBrush ImageSource="maldivim1-edit.jpg"/>
             </DataGrid.OpacityMask>

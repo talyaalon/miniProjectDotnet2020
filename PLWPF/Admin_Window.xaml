@@ -16,19 +16,8 @@
                 <ImageBrush ImageSource="נוף 2.jpg" Opacity="0.8"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="רשימת האורחים הרשומים באתר" HorizontalAlignment="Left" Margin="19,70,0,0" VerticalAlignment="Top" Width="268" Height="40" Click="Button_Click" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.026"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Content="רשימת המארחים הרשומים באתר" HorizontalAlignment="Left" Margin="17,138,0,0" VerticalAlignment="Top" Width="270" Height="40" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2" Click="Button_Click_5"/>
-        <Button Content="רשימת יחידות אירוח" HorizontalAlignment="Left" Margin="17,273,0,0" VerticalAlignment="Top" Width="270" Height="40" FontWeight="Bold" FontSize="16" Click="Button_Click_4" Grid.ColumnSpan="2"/>
-        <Button Content="רשימת הזמנות" HorizontalAlignment="Left" Margin="17,203,0,0" VerticalAlignment="Top" Width="270" Height="40" Click="Button_Click_3" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
+        <Button Content="רשימת יחידות אירוח" HorizontalAlignment="Left" Margin="17,138,0,0" VerticalAlignment="Top" Width="270" Height="40" FontWeight="Bold" FontSize="16" Click="Button_Click_4" Grid.ColumnSpan="2"/>
+        <Button Content="רשימת הזמנות" HorizontalAlignment="Left" Margin="17,72,0,0" VerticalAlignment="Top" Width="270" Height="40" Click="Button_Click_3" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
         <Button Content="רשימת יחידות פנויות על ידי תאריך ומספר ימים" HorizontalAlignment="Left" Margin="429,72,0,0" VerticalAlignment="Top" Width="290" Height="42" Click="Button_Click_1" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
         <Button Content="מספר הזמנות ביחידת אירוח מסויימת  " HorizontalAlignment="Left" Margin="429,138,0,0" VerticalAlignment="Top" Width="290" Height="40" Click="Button_Click_2" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
         <Button x:Name="buttonHome" HorizontalAlignment="Left" Height="Auto" Margin="694,327,0,32.667" VerticalAlignment="Stretch" Width="64" Click="ButtonHome_Click" RenderTransformOrigin="1.569,0.468" OpacityMask="{x:Null}" Grid.ColumnSpan="2">

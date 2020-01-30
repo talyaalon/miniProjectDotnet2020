@@ -1,149 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GuestRequests>
-  <guesRequest>
-    <guest_request_key>100000000</guest_request_key>
-    <firstName>אפרת</firstName>
-    <FamilyName>מזרחי</FamilyName>
-    <MailAddress>efrat192@gmail.com</MailAddress>
-    <FhoneNumber>0542971391</FhoneNumber>
-    <ID_of_Guest>207590225</ID_of_Guest>
-    <Status>טרם טופל</Status>
-    <RegistrationDate>2020,1,1</RegistrationDate>
-    <EntryDate>2020,11,22</EntryDate>
-    <ReleaseDate>2020,11,27</ReleaseDate>
-    <Area>מרכז</Area>
-    <SubArea>אשדוד</SubArea>
-    <Type>מלון</Type>
-    <Children>4</Children>
-    <adults>3</adults>
-    <Pool>כן</Pool>
-    <Jacuzzi>כן</Jacuzzi>
-    <Garden>לא</Garden>
-    <ChildrensAttractions>לא</ChildrensAttractions>
-  </guesRequest>
-  <guesRequest>
-    <firstName>מוריה</firstName>
-    <FamilyName>ראובן</FamilyName>
-    <MailAddress>efrat192@gmail.com</MailAddress>
-    <FhoneNumber>0546490471</FhoneNumber>
-    <ID_of_Guest>333333333</ID_of_Guest>
-    <Status>טרם טופל</Status>
-    <RegistrationDate>2020,01,25</RegistrationDate>
-    <EntryDate>2020,01,23</EntryDate>
-    <ReleaseDate>2020,01,27</ReleaseDate>
-    <Area>צפון</Area>
-    <SubArea>צפת</SubArea>
-    <Type>מלון</Type>
-    <Children>4</Children>
-    <adults>4</adults>
-    <Pool>כן</Pool>
-    <Jacuzzi>לא</Jacuzzi>
-    <Garden>כן</Garden>
-    <ChildrensAttractions>לא</ChildrensAttractions>
-  </guesRequest>
-  <GuestRequest>
+  <guestRequest>
     <guest_request_key>10000001</guest_request_key>
-    <firstName>ee</firstName>
-    <lastName>ee</lastName>
-    <MailAddress>efrat192@gmail.com</MailAddress>
-    <FhoneNumber>5555555555</FhoneNumber>
+    <firstName>א</firstName>
+    <lastName>א</lastName>
+    <MailAddress>e@gmail.com</MailAddress>
+    <FhoneNumber>4444444444</FhoneNumber>
     <Status>טרם_טופל</Status>
     <RegistrationDate>0001-01-01T00:00:00</RegistrationDate>
     <EntryDate>2020-01-30T00:00:00</EntryDate>
     <ReleaseDate>2020-01-31T00:00:00</ReleaseDate>
-    <Area>מרכז</Area>
-    <SubArea>טרם_טופל</SubArea>
-    <Type>צימר</Type>
-    <Adults>6</Adults>
-    <Children>4</Children>
-    <Pool>לא</Pool>
-    <Jacuzzi>כן</Jacuzzi>
-    <Garden>לא</Garden>
-    <ChildrensAttractions>לא</ChildrensAttractions>
-    <ID_of_Guest />
-  </GuestRequest>
-  <GuestRequest>
-    <guest_request_key>10000001</guest_request_key>
-    <firstName>ee</firstName>
-    <lastName>ee</lastName>
-    <MailAddress>efrat192@gmail.com</MailAddress>
-    <FhoneNumber>2222222222</FhoneNumber>
-    <Status>טרם_טופל</Status>
-    <RegistrationDate>0001-01-01T00:00:00</RegistrationDate>
-    <EntryDate>2020-01-28T00:00:00</EntryDate>
-    <ReleaseDate>2020-01-29T00:00:00</ReleaseDate>
-    <Area>מרכז</Area>
-    <SubArea>טרם_טופל</SubArea>
-    <Type>צימר</Type>
-    <Adults>6</Adults>
-    <Children>4</Children>
-    <Pool>לא</Pool>
-    <Jacuzzi>כן</Jacuzzi>
-    <Garden>לא</Garden>
-    <ChildrensAttractions>לא</ChildrensAttractions>
-    <ID_of_Guest />
-  </GuestRequest>
-  <GuestRequest>
-    <guest_request_key>10000001</guest_request_key>
-    <firstName>סיוון</firstName>
-    <lastName>חדד</lastName>
-    <MailAddress>s@gmail.com</MailAddress>
-    <FhoneNumber>0000000000</FhoneNumber>
-    <Status>טרם_טופל</Status>
-    <RegistrationDate>0001-01-01T00:00:00</RegistrationDate>
-    <EntryDate>2020-02-09T00:00:00</EntryDate>
-    <ReleaseDate>2020-02-13T00:00:00</ReleaseDate>
-    <Area>צפון</Area>
-    <SubArea>טרם_טופל</SubArea>
-    <Type>מלון</Type>
-    <Adults>6</Adults>
-    <Children>4</Children>
-    <Pool>כן</Pool>
-    <Jacuzzi>לא</Jacuzzi>
-    <Garden>כן</Garden>
-    <ChildrensAttractions>לא</ChildrensAttractions>
-    <ID_of_Guest />
-  </GuestRequest>
-  <GuestRequest>
-    <guest_request_key>10000001</guest_request_key>
-    <firstName>טלל</firstName>
-    <lastName>אאא</lastName>
-    <MailAddress>e@gmail.com</MailAddress>
-    <FhoneNumber>0000000000</FhoneNumber>
-    <Status>טרם_טופל</Status>
-    <RegistrationDate>0001-01-01T00:00:00</RegistrationDate>
-    <EntryDate>2020-02-10T00:00:00</EntryDate>
-    <ReleaseDate>2020-02-12T00:00:00</ReleaseDate>
-    <Area>צפון</Area>
-    <SubArea>טרם_טופל</SubArea>
-    <Type>מלון</Type>
-    <Adults>6</Adults>
-    <Children>4</Children>
-    <Pool>כן</Pool>
-    <Jacuzzi>כן</Jacuzzi>
-    <Garden>כן</Garden>
-    <ChildrensAttractions>כן</ChildrensAttractions>
-    <ID_of_Guest />
-  </GuestRequest>
-  <GuestRequest>
-    <guest_request_key>10000001</guest_request_key>
-    <firstName>t</firstName>
-    <lastName>t</lastName>
-    <MailAddress>efrat192@gmail.com</MailAddress>
-    <FhoneNumber>2222222222</FhoneNumber>
-    <Status>טרם_טופל</Status>
-    <RegistrationDate>0001-01-01T00:00:00</RegistrationDate>
-    <EntryDate>2020-01-31T00:00:00</EntryDate>
-    <ReleaseDate>2020-02-06T00:00:00</ReleaseDate>
     <Area>צפון</Area>
     <SubArea>טרם_טופל</SubArea>
     <Type>צימר</Type>
-    <Adults>6</Adults>
-    <Children>8</Children>
+    <Adults>5</Adults>
+    <Children>5</Children>
     <Pool>לא</Pool>
     <Jacuzzi>לא</Jacuzzi>
     <Garden>לא</Garden>
     <ChildrensAttractions>לא</ChildrensAttractions>
     <ID_of_Guest />
-  </GuestRequest>
+  </guestRequest>
 </GuestRequests>

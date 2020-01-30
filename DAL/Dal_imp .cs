@@ -23,6 +23,7 @@ namespace DAL
         {
 
             My_GuestRequest.guest_request_key = ++Configuration.GuestRequestKey;
+
             Dal_XML_imp.AddGuestRequestToXml(My_GuestRequest.Clone());
         }
 

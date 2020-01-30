@@ -34,6 +34,7 @@ namespace BL
 
         void AddOrder(Order My_Order);
         void UpdateOrder(Order My_Order);
+        List<Order> GetOrderList();
 
         void Sent_Mail(Order My_Order);
         double Calculation_amount_to_pay(GuestRequest my_guest, HostingUnit my_hostunit); //פונקציה שמחשבת סכום לתשלום, פונקציה חדשה שלנו 

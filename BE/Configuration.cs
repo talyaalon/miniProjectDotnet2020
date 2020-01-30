@@ -7,7 +7,7 @@ using System.Net.Mail;
 
 namespace BE
 {
-    public class Configuration
+    public static class Configuration
     {
         //GuestRequest:
         public static long GuestRequestKey=10000000;

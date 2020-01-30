@@ -71,12 +71,6 @@
     <Compile Include="ForgotPassword.xaml.cs">
       <DependentUpon>ForgotPassword.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListOfGuest.xaml.cs">
-      <DependentUpon>ListOfGuest.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ListOfHost.xaml.cs">
-      <DependentUpon>ListOfHost.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ListOfHostingUnit.xaml.cs">
       <DependentUpon>ListOfHostingUnit.xaml</DependentUpon>
     </Compile>
@@ -130,14 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ForgotPassword.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ListOfGuest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ListOfHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

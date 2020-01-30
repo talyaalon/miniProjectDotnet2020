@@ -274,7 +274,7 @@ namespace DAL
                                                                                new XElement("BranchCity", myHost.BankAccuont.BranchCity),
                                                                                new XElement("BranchNumber", myHost.BankAccuont.BranchNumber));
             XElement CollectionClearance = new XElement("CollectionClearance", myHost.CollectionClearance);
-            XElement host = new XElement("myHost", FirstName_host, LastName_host, Id_host, Password_host,
+            XElement host = new XElement("yHost", FirstName_host, LastName_host, Id_host, Password_host,
                 FhoneNumber, MailAddress, BankAccountNumber, BankAccuont, CollectionClearance);
             xmlElement.Add(host);
             xmlElement.Save(Path + "hosts.xml");

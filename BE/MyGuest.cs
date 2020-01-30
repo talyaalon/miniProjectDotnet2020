@@ -12,7 +12,7 @@ namespace BE
         public string LastName { get; set; }
         public string Id { get; set; }
         public string Password { get; set; }
-        public DateTime RegistrationDate = DateTime.Now;
+        public DateTime RegistrationDate =DateTime.Now;
 
         public override string ToString()
         {
